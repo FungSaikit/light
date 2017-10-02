@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+
+<link rel="stylesheet" href="./CSS/search_bar.css">
+<script type="text/javascript" src="./JavaScript/search_bar.js"></script>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 2000px;
+        background-color: #eeeeee;
+    }
+
+    a {
+        text-decoration: none;
+        color: #646464;
+    }
+
+    .playlist {
+        width: 100%;
+    }
+
+    .playlist img {
+        width: 100%;
+    }
+
+    .topline {
+        line-height: 2em;
+        background-color: #fff;
+        margin-bottom: 0.1em;
+    }
+
+    #topline_title {
+        display: inline-block;
+        color: orangered;
+        padding: 0.1em;
+        width: 4em;
+        font-weight: bold;
+    }
+
+    #topline_content {
+        color: #646464;
+        font-size: 0.8em;
+        text-decoration: none;
+    }
+
+    #top_content_div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 230px;
+    }
+
+    .lightblock {
+        background-color: #FFFFFF;
+        margin-bottom: 0.1em;
+    }
+
+    .lightblockimg {
+        height: 3em;
+        line-height: 3em;
+    }
+
+    .lightblockspan {
+        height: 1.5em;
+    }
+
+    .lightblock img {
+        width: 2em;
+        vertical-align: middle;
+    }
+
+    .lightblock span {
+
+    }
+
+    .lightblock table {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+    .lightblock td {
+        border: 1px #e6e6e6 solid;
+        width: 20%;
+    }
+
+    .lightblock tr {
+        height: 4em;
+    }
+
+    .block {
+        background-color: #fff;
+        margin-bottom: 0.1em;
+    }
+
+    .block table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .block1 {
+        width: 100%;
+        position: relative;
+    }
+
+    .block1link {
+        float: right;
+    }
+
+    .block1img {
+        width: 100%;
+        display: block;
+    }
+
+    .block1text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        vertical-align: middle;
+        color: #000;
+        padding-left: 0.5em;
+    }
+
+    .block2 {
+        width: 3em;
+    }
+
+    .block3 {
+        width: 3em;
+    }
+
+    .blockleft {
+        width: 35%;
+        text-align: center;
+    }
+
+    .blockright {
+        width: 15%;
+        text-align: center;
+        border-right: 1px solid #e6e6e6;
+    }
+
+    .blockname {
+        color: #646464;
+        vertical-align: middle;
+        padding: 0.2em;
+    }
+
+    .moreimg {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+    }
+
+    .moretext {
+        float: left;
+        vertical-align: middle;
+    }
+
+    .recommend {
+        background-color: #fafafa;
+    }
+
+    .recommendgoods{
+        display: inline-block;
+        height: 12em;
+        width: 48%;
+        background-color: #fff;
+        margin-left: 1%;
+        margin-top: 1%;
+    }
+
+    .commend_title {
+        display: block;
+        text-align:center;
+        margin: 0.1em auto;
+        color: #646464;
+        font-size: 0.8em;
+    }
+
+</style>
+
+<body>
+<div class="searchbar">
+    <table>
+        <tr style="line-height: 2em; ">
+            <td style="width: 10%; height: 2em;"><img class="searchbarimg" src="./IMG/search_bar/class_white.png"></td>
+            <td id="search_frame">
+                <img class="searchinputimg" src="./IMG/search_bar/search_white.png">
+                <input class="searchinput0" type="text" placeholder="请输入你要查找的内容">
+                <img class="searchinputimg" src="./IMG/search_bar/clear_white.png">
+            </td>
+            <td style="width: 10%; height: 2em;"><img class="searchbarimg" src="./IMG/search_bar/cs_white.png"></td>
+        </tr>
+    </table>
+</div>
+
+<div class="playlist">
+    <ul>
+        <li><a href="#"><img src="./IMG/play_list/img1.jpg"></a></li>
+    </ul>
+</div>
+
+<div class="topline">
+    <table id="totline_table">
+        <tr>
+            <td id="topline_title_tr"><a id="topline_title" href="#">灯饰头条</a></td>
+            <td id="topline_content_tr" nowrap>
+                <div id="top_content_div">
+                    <a id="topline_content" href="#">热烈庆祝哈哈哈哈哈灯饰热烈庆祝哈哈哈哈哈灯饰热烈庆祝哈哈哈哈哈灯饰</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="lightblock">
+    <table>
+        <tr>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="IMG/light/0-pendant.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>吊灯</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg"><img src="IMG/light/0-ceiling.png"></div>
+                    <div class="lightblockspan"><span>吸顶灯</span></div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg"><img src="IMG/light/0-wall.png"></div>
+                    <div class="lightblockspan"><span>壁灯</span></div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="IMG/light/0-tablelamp.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>台灯</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="IMG/light/0-auxiliary.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>辅灯</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="IMG/light/1-cupric.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>铜灯</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="IMG/light/1-ferric.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>铁艺</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="IMG/light/1-wooden.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>木艺</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="IMG/light/1-zincic.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>锌合金</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="IMG/light/1-more.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>更多</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="block">
+    <table>
+        <tr style="height: 2em;">
+            <td colspan="4">
+                <span class="blockname">热卖专区</span>
+                <a class="block1link" href="#">
+                    <span class="moretext">更多&nbsp</span>
+                    <img class="moreimg" src="./IMG/hot_sale/more.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="block1" colspan="4">
+                <a href="#">
+                    <img class="block1img" src="./IMG/hot_sale/pendant_hot_sale.jpg">
+                    <span class="block1text">吊灯热卖专区</span>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="blockleft">
+                吸顶灯热卖
+            </td>
+            <td class="blockright">
+                <a href="#"><img class="block2" src="./IMG/hot_sale/ceiling_hot_sale.png" alt=""></a>
+            </td>
+            <td class="blockleft">
+                辅灯热卖专区
+            </td>
+            <td class="blockright">
+                <a href="#"><img class="block3" src="./IMG/hot_sale/auxiliary_hot_sale.png" alt=""></a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="block">
+    <table>
+        <tr style="height: 2em;">
+            <td colspan="4">
+                <span class="blockname">热卖专区</span>
+                <a class="block1link" href="#">
+                    <span class="moretext">更多&nbsp</span>
+                    <img class="moreimg" src="./IMG/hot_sale/more.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="block1" colspan="4">
+                <a href="#">
+                    <img class="block1img" src="./IMG/hot_sale/pendant_hot_sale.jpg">
+                    <span class="block1text">吊灯热卖专区</span>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="blockleft">
+                吸顶灯热卖
+            </td>
+            <td class="blockright">
+                <a href="#"><img class="block2" src="./IMG/hot_sale/ceiling_hot_sale.png" alt=""></a>
+            </td>
+            <td class="blockleft">
+                辅灯热卖专区
+            </td>
+            <td class="blockright">
+                <a href="#"><img class="block3" src="./IMG/hot_sale/auxiliary_hot_sale.png" alt=""></a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="block">
+    <table>
+        <tr style="height: 2em;">
+            <td colspan="4">
+                <span class="blockname">热卖专区</span>
+                <a class="block1link" href="#">
+                    <span class="moretext">更多&nbsp</span>
+                    <img class="moreimg" src="./IMG/hot_sale/more.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="block1" colspan="4">
+                <a href="#">
+                    <img class="block1img" src="./IMG/hot_sale/pendant_hot_sale.jpg">
+                    <span class="block1text">吊灯热卖专区</span>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="blockleft">
+                吸顶灯热卖
+            </td>
+            <td class="blockright">
+                <a href="#"><img class="block2" src="./IMG/hot_sale/ceiling_hot_sale.png" alt=""></a>
+            </td>
+            <td class="blockleft">
+                辅灯热卖专区
+            </td>
+            <td class="blockright">
+                <a href="#"><img class="block3" src="./IMG/hot_sale/auxiliary_hot_sale.png" alt=""></a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<div class="recommend">
+    <span class="commend_title">———— 为你推荐 ————</span>
+
+    <div class="recommendgoods">
+
+    </div><div class="recommendgoods">
+
+    </div>
+
+    <span class="commend_title">———— 我是有底线的 ————</span>
+</div>
+</body>
+
+<script type="text/javascript">
+    var flag = 0;
+    var t;
+    var searchIMG0 = document.getElementsByClassName("searchbarimg")[0];
+    var searchIMG1 = document.getElementsByClassName("searchbarimg")[1];
+    var searchInputIMG0 = document.getElementsByClassName("searchinputimg")[0];
+    var searchInputIMG1 = document.getElementsByClassName("searchinputimg")[1];
+    var searchbar = document.getElementsByClassName("searchbar")[0];
+    var searchFrame = document.getElementById("search_frame");
+    var searchInput = document.getElementsByClassName("searchinput0")[0];
+    var block1Text = document.getElementsByClassName("block1text");
+    var block1IMG = document.getElementsByClassName("block1img");
+    window.onload = function () {
+        document.getElementById("top_content_div").style.width
+            = String(document.body.clientWidth - document.getElementById("topline_title_tr").clientWidth - 10)
+            + "px";
+        for (var i = 0; i <block1Text.length; i++){
+            block1Text[i].style.lineHeight = block1IMG[i].clientHeight + "px";
+        }
+    }
+</script>
+
+</html>
