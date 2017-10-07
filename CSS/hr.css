@@ -1,0 +1,17 @@
+.hr {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cell {
+    display: inline-block;
+    height: 1px;
+    width: 30%;
+    background-color: #b4b4b4;
+}
+
+.hr_title {
+    color: #b4b4b4;
+    display: inline-block;
+    font-size: 0.6em;
+}

@@ -1,6 +1,6 @@
 window.onscroll = function () {
-    t = document.documentElement.scrollTop;
-    if (t < 100) {
+    topLocation = document.documentElement.scrollTop || document.body.scrollTop;
+    if (topLocation < 100) {
         if (flag == 1){
             searchbar.style.borderBottom = "none";
             searchIMG0.src = "./IMG/search_bar/class_white.png";
@@ -11,7 +11,7 @@ window.onscroll = function () {
             searchInput.className = "searchinput0";
             flag = 0;
         }
-        searchbar.style.backgroundColor = "rgba(255, 255, 255, " + (0.1 + t / 400) + ")";
+        searchbar.style.backgroundColor = "rgba(255, 255, 255, " + (0.1 + topLocation / 400) + ")";
     } else {
         if (flag == 0) {
             searchbar.style.borderBottom = "1px solid lightgray";
@@ -26,3 +26,4 @@ window.onscroll = function () {
         }
     }
 }
+

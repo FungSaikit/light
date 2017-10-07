@@ -8,6 +8,7 @@
 </head>
 
 <link rel="stylesheet" href="./CSS/search_bar.css">
+<link rel="stylesheet" href="./CSS/good_list.css">
 <script type="text/javascript" src="./JavaScript/search_bar.js"></script>
 
 <style>
@@ -18,7 +19,6 @@
     }
 
     body {
-        height: 2000px;
         background-color: #eeeeee;
     }
 
@@ -81,10 +81,6 @@
         vertical-align: middle;
     }
 
-    .lightblock span {
-
-    }
-
     .lightblock table {
         width: 100%;
         text-align: center;
@@ -102,7 +98,7 @@
 
     .block {
         background-color: #fff;
-        margin-bottom: 0.1em;
+        margin-bottom: 0.2em;
     }
 
     .block table {
@@ -169,26 +165,6 @@
         vertical-align: middle;
     }
 
-    .recommend {
-        background-color: #fafafa;
-    }
-
-    .recommendgoods{
-        display: inline-block;
-        height: 12em;
-        width: 48%;
-        background-color: #fff;
-        margin-left: 1%;
-        margin-top: 1%;
-    }
-
-    .commend_title {
-        display: block;
-        text-align:center;
-        margin: 0.1em auto;
-        color: #646464;
-        font-size: 0.8em;
-    }
 
 </style>
 
@@ -209,7 +185,11 @@
 
 <div class="playlist">
     <ul>
-        <li><a href="#"><img src="./IMG/play_list/img1.jpg"></a></li>
+        <li class="pl_pic"><a href="#"><img class="pl_picture" src="./IMG/play_list/img1.jpg"></a></li>
+        <li class="pl_pic" hidden><a href="#"><img class="pl_picture" src="./IMG/play_list/img2.png"></a></li>
+        <li class="pl_pic" hidden><a href="#"><img class="pl_picture" src="./IMG/play_list/img3.png"></a></li>
+        <li class="pl_pic" hidden><a href="#"><img class="pl_picture" src="./IMG/play_list/img4.png"></a></li>
+        <li class="pl_pic" hidden><a href="#"><img class="pl_picture" src="./IMG/play_list/img5.jpg"></a></li>
     </ul>
 </div>
 
@@ -435,21 +415,101 @@
 
 
 <div class="recommend">
-    <span class="commend_title">———— 为你推荐 ————</span>
+    <span class="recommend_title">———— 为你推荐 ————</span>
 
+    <!--推荐商品-->
     <div class="recommendgoods">
+        <a href="#">
+            <img src="./IMG/play_list/img2.png" class="goods_pic">
+            <br>
+            <span class="goodstitle">松下（Panasonic）HHLA1630CB LED灯吸顶灯客厅卧室灯具 19W素白 哈哈哈哈哈哈哈</span>
+            <div class="goodsdetail">
+                <span class="goodsmodel">型号: GY8801/左</span>
+                <br>
+                <span class="goodsspec">规格: 左边款/壁灯</span>
+            </div>
 
-    </div><div class="recommendgoods">
+            <div class="goodsprice">
+                <span>￥ 150</span>
+                <img class="cartpic" src="./IMG/recommend/cart.png">
+            </div>
+        </a>
+    </div>
+    <div class="recommendgoods">
+        <a href="#">
+            <img src="./IMG/play_list/img2.png" class="goods_pic">
+            <br>
+            <span class="goodstitle">松下（Panasonic）HHLA1630CB LED灯吸顶灯客厅卧室灯具 19W素白 哈哈哈哈哈哈哈</span>
+            <div class="goodsdetail">
+                <span class="goodsmodel">型号: GY8801/左</span>
+                <br>
+                <span class="goodsspec">规格: 左边款/壁灯</span>
+            </div>
 
+            <div class="goodsprice">
+                <span>￥ 150</span>
+                <img class="cartpic" src="./IMG/recommend/cart.png">
+            </div>
+        </a>
+    </div>
+    <div class="recommendgoods">
+        <a href="#">
+            <img src="./IMG/play_list/img2.png" class="goods_pic">
+            <br>
+            <span class="goodstitle">松下（Panasonic）HHLA1630CB LED灯吸顶灯客厅卧室灯具 19W素白 哈哈哈哈哈哈哈</span>
+            <div class="goodsdetail">
+                <span class="goodsmodel">型号: GY8801/左</span>
+                <br>
+                <span class="goodsspec">规格: 左边款/壁灯</span>
+            </div>
+
+            <div class="goodsprice">
+                <span>￥ 150</span>
+                <img class="cartpic" src="./IMG/recommend/cart.png">
+            </div>
+        </a>
+    </div>
+    <div class="recommendgoods">
+        <a href="#">
+            <img src="./IMG/play_list/img2.png" class="goods_pic">
+            <br>
+            <span class="goodstitle">松下（Panasonic）HHLA1630CB LED灯吸顶灯客厅卧室灯具 19W素白 哈哈哈哈哈哈哈</span>
+            <div class="goodsdetail">
+                <span class="goodsmodel">型号: GY8801/左</span>
+                <br>
+                <span class="goodsspec">规格: 左边款/壁灯</span>
+            </div>
+
+            <div class="goodsprice">
+                <span>￥ 150</span>
+                <img class="cartpic" src="./IMG/recommend/cart.png">
+            </div>
+        </a>
+    </div>
+    <div class="recommendgoods">
+        <a href="#">
+            <img src="./IMG/play_list/img2.png" class="goods_pic">
+            <br>
+            <span class="goodstitle">松下（Panasonic）HHLA1630CB LED灯吸顶灯客厅卧室灯具 19W素白 哈哈哈哈哈哈哈</span>
+            <div class="goodsdetail">
+                <span class="goodsmodel">型号: GY8801/左</span>
+                <br>
+                <span class="goodsspec">规格: 左边款/壁灯</span>
+            </div>
+
+            <div class="goodsprice">
+                <span>￥ 150</span>
+                <img onclick="cart()" class="cartpic" src="./IMG/recommend/cart.png">
+            </div>
+        </a>
     </div>
 
-    <span class="commend_title">———— 我是有底线的 ————</span>
+    <!--推荐商品-->
+    <span class="recommend_title">———— 我是有底线的 ————</span>
 </div>
 </body>
 
 <script type="text/javascript">
-    var flag = 0;
-    var t;
     var searchIMG0 = document.getElementsByClassName("searchbarimg")[0];
     var searchIMG1 = document.getElementsByClassName("searchbarimg")[1];
     var searchInputIMG0 = document.getElementsByClassName("searchinputimg")[0];
@@ -457,16 +517,58 @@
     var searchbar = document.getElementsByClassName("searchbar")[0];
     var searchFrame = document.getElementById("search_frame");
     var searchInput = document.getElementsByClassName("searchinput0")[0];
+
+    var flag = 0;
+    var topLocation;
+    var currentPic = 0;
+    var nextPic = 1;
     var block1Text = document.getElementsByClassName("block1text");
     var block1IMG = document.getElementsByClassName("block1img");
+    var playList = document.getElementsByClassName("playlist")[0];
+    var playListPictures = document.getElementsByClassName("pl_picture")
+    var playListPicturesLi = document.getElementsByClassName("pl_pic");
+    var goods = document.getElementsByClassName("recommendgoods");
+
     window.onload = function () {
+        /*设置高度playlist高度*/
+        for (var i = 1; i < playListPictures.length; i++) {
+            playListPictures[i].style.height = playListPictures[0].clientHeight + "px"
+        }
+        /*设置头条内容宽度*/
         document.getElementById("top_content_div").style.width
             = String(document.body.clientWidth - document.getElementById("topline_title_tr").clientWidth - 10)
             + "px";
-        for (var i = 0; i <block1Text.length; i++){
+        /*设置内容块1的高度*/
+        for (var i = 0; i < block1Text.length; i++) {
             block1Text[i].style.lineHeight = block1IMG[i].clientHeight + "px";
         }
+        /*设置物品推荐高度*/
+        for (var i = 0; i < goods.length; i++) {
+            goods[i].style.height = (goods[0].clientWidth / 3 * 5) + "px";
+        }
     }
+
+    function goToPic(i) {
+        playListPicturesLi[currentPic].hidden = true;
+        playListPicturesLi[i].hidden = false;
+        currentPic = i;
+    }
+    function goToNextPic() {
+        if (nextPic < playListPictures.length) {
+            goToPic(nextPic++);
+        } else {
+            nextPic = 1;
+            goToPic(0);
+        }
+    }
+    var timer1 = setInterval(goToNextPic, 3000);
+
+    function cart() {
+        alert("你点击购物车了～");
+        return false;
+    }
+
+
 </script>
 
 </html>

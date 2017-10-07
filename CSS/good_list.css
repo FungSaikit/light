@@ -1,0 +1,87 @@
+a {
+    text-decoration: none;
+    color: #646464;
+}
+
+.recommend {
+    background-color: #fafafa;
+    vertical-align: top;
+}
+
+.recommend:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.recommendgoods {
+    float: left;
+    display: inline-block;
+    width: 48.5%;
+    background-color: #fff;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.recommend_title {
+    display: block;
+    text-align: center;
+    margin: 0.1em auto;
+    color: #646464;
+    font-size: 0.8em;
+    float: left;
+    width: 100%;
+}
+
+.recommendgoods a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.goods_pic {
+    width: 100%;
+    height: 50%;
+}
+
+.goodstitle {
+    height: 20%;
+    color: black;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-bottom: 5%;
+    vertical-align: middle;
+}
+
+.goodsdetail {
+    height: 15%;
+}
+
+.goodsmodel, .goodsspec {
+    color: #a8a8a8;
+    font-size: 0.8em;
+}
+
+.goodsprice {
+    height: 10%;
+    color: #f65f0c;
+    font-size: 1.2em;
+
+}
+
+.goodsprice span {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+}
+
+.cartpic {
+    height: 80%;
+    margin-right: 5%;
+    float: right;
+}
