@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+</head>
+<body style="height: 900px">
+
+</body>
+
+<script type="text/javascript">
+
+    var body = document.getElementsByTagName("body")[0];
+
+    body.addEventListener("touchstart", touchdown, false);
+    body.addEventListener("touchmove", touchdown, false);
+    body.addEventListener("touchend", touchdown, false);
+
+    function touchdown(event) {
+        var touch = event.touches[0];
+        switch (event.type) {
+            case "touchstart":
+                console.log(touch.clientY);
+                break;
+            case "touchmove":
+                console.log(touch.clientY);
+                break;
+            case "touchend":
+                console.log(event.changedTouches[0].clientY);
+                break;
+            default: break;
+        }
+
+    }
+
+</script>
+
+</html>
