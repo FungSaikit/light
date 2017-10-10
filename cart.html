@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>东方百泰</title>
+
+    <link rel="stylesheet" href="./CSS/topbar.css">
+    <link rel="stylesheet" href="./CSS/cart.css">
+
+</head>
+
+<body>
+
+<div class="topbar">
+    <a href="#"><img class="topbar_left" src="./IMG/top_bar/back_white.png" alt="返回"></a>
+    <span class="topbar_middle">购物车</span>
+    <a href="#" onclick="editMode()" id="changeMode"><span class="topbar_right">编辑</span></a>
+</div>
+
+<div class="placeholder">
+    什么都没有了哦
+</div>
+
+<div class="cart_list">
+
+    <div class="goods" id="0">
+        <div class="goods_top">
+            <table>
+                <tr>
+                    <td>
+                        <div class="goods_cb">
+                            <input class="check_goods" type="checkbox" onchange="count()">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="goods_pic">
+                            <img class="goods_pic_img" src="./IMG/play_list/img1.jpg" alt="图片">
+                        </div>
+                    </td>
+                    <td>
+                        <table class="goods_dt">
+                            <tr>
+                                <td class="goods_tt">简约日式LED现代实木吸顶灯点点滴滴红红火火恍恍惚惚哈哈哈哈哈</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_md">型号：GY-X8852/4</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_prz">￥<span class="price" id="price_0">1</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="goods_bottom">
+            <div class="number_div">
+                <table class="number_table">
+                    <tr>
+                        <td class="minus_td"><a href="javascript:void(0)" onclick="minusOne(this)">&nbsp-&nbsp</a></td>
+                        <td class="number_td"><input class="number" type="text" value="1" onchange="checkInput(this)"></td>
+                        <td class="plus_td"><a href="javascript:void(0)" onclick="plusOne(this)">&nbsp+&nbsp</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="color_div">
+                <select class="color_option" id="color_0" onchange="changeColor(this)">
+                    <option value="1">4头48瓦 LED吸顶</option>
+                    <option value="5">4头48瓦 LED吸顶</option>
+                    <option value="9">4头48瓦 LED吸顶</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="goods" id="1">
+        <div class="goods_top">
+            <table>
+                <tr>
+                    <td>
+                        <div class="goods_cb">
+                            <input class="check_goods" type="checkbox" onchange="count()">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="goods_pic">
+                            <img class="goods_pic_img" src="./IMG/play_list/img1.jpg" alt="图片">
+                        </div>
+                    </td>
+                    <td>
+                        <table class="goods_dt">
+                            <tr>
+                                <td class="goods_tt">简约日式LED现代实木吸顶灯点点滴滴红红火火恍恍惚惚哈哈哈哈哈</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_md">型号：GY-X8852/4</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_prz">￥<span class="price">2</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="goods_bottom">
+            <div class="number_div">
+                <table class="number_table">
+                    <tr>
+                        <td class="minus_td"><a href="javascript:void(0)" onclick="minusOne(this)">&nbsp-&nbsp</a></td>
+                        <td class="number_td"><input class="number" type="text" value="1" onchange="checkInput(this)"></td>
+                        <td class="plus_td"><a href="javascript:void(0)" onclick="plusOne(this)">&nbsp+&nbsp</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="color_div">
+                <select class="color_option" name="" id="">
+                    <option value="0">4头48瓦 LED吸顶</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="goods" id="2">
+        <div class="goods_top">
+            <table>
+                <tr>
+                    <td>
+                        <div class="goods_cb">
+                            <input class="check_goods" type="checkbox" onchange="count()">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="goods_pic">
+                            <img class="goods_pic_img" src="./IMG/play_list/img1.jpg" alt="图片">
+                        </div>
+                    </td>
+                    <td>
+                        <table class="goods_dt">
+                            <tr>
+                                <td class="goods_tt">简约日式LED现代实木吸顶灯点点滴滴红红火火恍恍惚惚哈哈哈哈哈</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_md">型号：GY-X8852/4</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_prz">￥<span class="price">3</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="goods_bottom">
+            <div class="number_div">
+                <table class="number_table">
+                    <tr>
+                        <td class="minus_td"><a href="javascript:void(0)" onclick="minusOne(this)">&nbsp-&nbsp</a></td>
+                        <td class="number_td"><input class="number" type="text" value="1" onchange="checkInput(this)"></td>
+                        <td class="plus_td"><a href="javascript:void(0)" onclick="plusOne(this)">&nbsp+&nbsp</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="color_div">
+                <select class="color_option" name="" id="">
+                    <option value="0">4头48瓦 LED吸顶</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="goods" id="3">
+        <div class="goods_top">
+            <table>
+                <tr>
+                    <td>
+                        <div class="goods_cb">
+                            <input class="check_goods" type="checkbox" onchange="count()">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="goods_pic">
+                            <img class="goods_pic_img" src="./IMG/play_list/img1.jpg" alt="图片">
+                        </div>
+                    </td>
+                    <td>
+                        <table class="goods_dt">
+                            <tr>
+                                <td class="goods_tt">简约日式LED现代实木吸顶灯点点滴滴红红火火恍恍惚惚哈哈哈哈哈</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_md">型号：GY-X8852/4</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_prz">￥<span class="price">4</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="goods_bottom">
+            <div class="number_div">
+                <table class="number_table">
+                    <tr>
+                        <td class="minus_td"><a href="javascript:void(0)" onclick="minusOne(this)">&nbsp-&nbsp</a></td>
+                        <td class="number_td"><input class="number" type="text" value="1" onchange="checkInput(this)"></td>
+                        <td class="plus_td"><a href="javascript:void(0)" onclick="plusOne(this)">&nbsp+&nbsp</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="color_div">
+                <select class="color_option" name="" id="">
+                    <option value="0">4头48瓦 LED吸顶</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="goods" id="4">
+        <div class="goods_top">
+            <table>
+                <tr>
+                    <td>
+                        <div class="goods_cb">
+                            <input class="check_goods" type="checkbox" onchange="count()">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="goods_pic">
+                            <img class="goods_pic_img" src="./IMG/play_list/img1.jpg" alt="图片">
+                        </div>
+                    </td>
+                    <td>
+                        <table class="goods_dt">
+                            <tr>
+                                <td class="goods_tt">简约日式LED现代实木吸顶灯点点滴滴红红火火恍恍惚惚哈哈哈哈哈</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_md">型号：GY-X8852/4</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_prz">￥<span class="price">5</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="goods_bottom">
+            <div class="number_div">
+                <table class="number_table">
+                    <tr>
+                        <td class="minus_td"><a href="javascript:void(0)" onclick="minusOne(this)">&nbsp-&nbsp</a></td>
+                        <td class="number_td"><input class="number" type="text" value="1" onchange="checkInput(this)"></td>
+                        <td class="plus_td"><a href="javascript:void(0)" onclick="plusOne(this)">&nbsp+&nbsp</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="color_div">
+                <select class="color_option" name="" id="">
+                    <option value="0">4头48瓦 LED吸顶</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="goods" id="5">
+        <div class="goods_top">
+            <table>
+                <tr>
+                    <td>
+                        <div class="goods_cb">
+                            <input class="check_goods" type="checkbox" onchange="count()">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="goods_pic">
+                            <img class="goods_pic_img" src="./IMG/play_list/img1.jpg" alt="图片">
+                        </div>
+                    </td>
+                    <td>
+                        <table class="goods_dt">
+                            <tr>
+                                <td class="goods_tt">简约日式LED现代实木吸顶灯点点滴滴红红火火恍恍惚惚哈哈哈哈哈</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_md">型号：GY-X8852/4</td>
+                            </tr>
+                            <tr>
+                                <td class="goods_prz">￥<span class="price">6</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="goods_bottom">
+            <div class="number_div">
+                <table class="number_table">
+                    <tr>
+                        <td class="minus_td"><a href="javascript:void(0)" onclick="minusOne(this)">&nbsp-&nbsp</a></td>
+                        <td class="number_td"><input class="number" type="text" value="1" onchange="checkInput(this)"></td>
+                        <td class="plus_td"><a href="javascript:void(0)" onclick="plusOne(this)">&nbsp+&nbsp</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="color_div">
+                <select class="color_option" name="" id="">
+                    <option value="0">4头48瓦 LED吸顶</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="placeholder"></div>
+
+<div id="pay_menu" class="cart_menu">
+    <div class="menu_sub_div select_all_div">
+        <input class="select_all_checkbox" onchange="selectAllGoods(self)" type="checkbox">
+        <span class="select_all_span" onclick="selectAllGoods_1()">全选</span>
+    </div>
+    <div id="total_div" class="menu_sub_div">
+        <span>合计：￥ <span id="total_price"></span></span>
+    </div>
+    <div id="pay_div" class="menu_sub_div">
+        <a id="pay_button" href="javascript:void(0)">结算</a>
+    </div>
+</div>
+
+<div class="cart_menu" id="edit_menu" hidden>
+    <div class="menu_sub_div select_all_div">
+        <input class="select_all_checkbox" onchange="deleteAllGoods(self)" type="checkbox">
+        <span class="select_all_span" onclick="deleteAllGoods_1()">全选</span>
+    </div>
+    <div>
+        <a id="delete_button" class="delete_button" href="javascript:void(0)" onclick="deleteRequest()">删除</a>
+    </div>
+</div>
+
+
+</body>
+
+<script type="text/javascript">
+
+    var deleteArray;
+
+    var goodsCheckbox = document.getElementsByClassName('check_goods');
+    var selectAllButton = document.getElementsByClassName("select_all_checkbox")[0];
+    var deleteAllButton = document.getElementsByClassName("select_all_checkbox")[1];
+    var changeModeButton = document.getElementById("changeMode");
+    var payMenu = document.getElementById("pay_menu");
+    var editMenu = document.getElementById("edit_menu");
+
+    window.onload = function () {
+        count();
+    }
+
+
+    function selectAllGoods() {
+        for (var i = 0; i < goodsCheckbox.length; i++) {
+            goodsCheckbox[i].checked = selectAllButton.checked;
+        }
+        count();
+    }
+
+    function selectAllGoods_1() {
+        selectAllButton.checked = !selectAllButton.checked;
+        for (var i = 0; i < goodsCheckbox.length; i++) {
+            goodsCheckbox[i].checked = selectAllButton.checked;
+        }
+        count();
+    }
+
+    function deleteAllGoods() {
+        for (var i = 0; i < goodsCheckbox.length; i++) {
+            goodsCheckbox[i].checked = deleteAllButton.checked;
+        }
+    }
+
+    function deleteAllGoods_1() {
+        deleteAllButton.checked = !deleteAllButton.checked;
+        for (var i = 0; i < goodsCheckbox.length; i++) {
+            goodsCheckbox[i].checked = deleteAllButton.checked;
+        }
+    }
+
+    function editMode() {
+        payMenu.hidden = true;
+        editMenu.hidden = false;
+        changeModeButton.innerHTML = "<span class=\"topbar_right\">完成</span>";
+        changeModeButton.onclick = payMode;
+    }
+
+    function payMode() {
+        payMenu.hidden = false;
+        editMenu.hidden = true;
+        changeModeButton.innerHTML = "<span class=\"topbar_right\">编辑</span>";
+        changeModeButton.onclick = editMode;
+    }
+
+    function count() {
+        var number = document.getElementsByClassName('number');
+        var price = document.getElementsByClassName('price');
+        var total = document.getElementById('total_price');
+        var result = 0;
+        for (var i = 0; i < price.length; i++) {
+            if (goodsCheckbox[i].checked) {
+                result += parseInt(number[i].value) * parseFloat(price[i].innerText);
+            }
+
+        }
+        total.innerHTML = result;
+    }
+
+    function plusOne(object) {
+        var number = object.parentNode.previousSibling.previousSibling.childNodes[0].value;
+        if (parseInt(number)){
+            object.parentNode.previousSibling.previousSibling.childNodes[0].value = parseInt(number) + 1;
+        } else {
+            object.parentNode.previousSibling.previousSibling.childNodes[0].value = 1;
+        }
+        count();
+    }
+
+    function minusOne(object) {
+        var number = object.parentNode.nextSibling.nextSibling.childNodes[0].value;
+        if (parseInt(number)) {
+            if (number > 1) {
+                object.parentNode.nextSibling.nextSibling.childNodes[0].value = parseInt(number) - 1;
+            } else {
+                alert("不能再小了");
+            }
+        } else {
+            object.parentNode.nextSibling.nextSibling.childNodes[0].value = 1;
+        }
+        count();
+    }
+
+    function checkInput(object) {
+        console.log(parseInt(object.value))
+        if (!parseInt(object.value)){
+            alert("出入有误请重新输入");
+            object.focus();
+        } else {
+            object.value = parseInt(object.value);
+        }
+        count();
+    }
+
+    function changeColor(object) {
+        var url = "";
+        var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+        xhr.open("post", url, true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send("id=" + object.id.substr(6));
+        xhr.onreadystatechange = function () {
+            if(status == 200 && status == 4) {
+                document.getElementById("price_" + object.id.substr(6)).innerHTML = this.responseText;
+            }
+        }
+        document.getElementById("price_" + object.id.substr(6)).innerHTML = object.value;
+        count();
+    }
+
+    function deleteRequest() {
+        deleteArray = [];
+        for (var i = 0; i < goodsCheckbox.length; i++) {
+            if (goodsCheckbox[i].checked) {
+                deleteArray.push(goodsCheckbox[i].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id);
+            }
+        }
+        if (confirm("是否删除这" + deleteArray.length + "项?")){
+            /*
+            http
+            请
+            求
+            */
+            /*
+            var url = "";
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+            xhr.open("post", url, true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send(deleteArray);
+            xhr.onreadystatechange = function () {
+                if(status == 200 && status == 4) {
+                    if (this.responseText == 1){
+                        deleteGoods();
+                    } else {
+                        alert("删除错误");
+                    }
+                }
+            }
+            */
+            deleteGoods();
+        }
+    }
+
+    function deleteGoods() {
+        for (var i = 0; i < deleteArray.length; i++) {
+            var thisNode = document.getElementById(deleteArray[i]);
+            thisNode.parentNode.removeChild(thisNode);
+        }
+        count();
+    }
+
+</script>
+
+</html>

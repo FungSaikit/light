@@ -1,0 +1,30 @@
+.topbar {
+    height: 3em;
+    background-color: #fff;
+    border-bottom: 1px solid darkgray;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.topbar_left {
+    height: 60%;
+    float: left;
+    padding-left: 1.5em;
+    margin-top: 0.6em;
+}
+
+.topbar_right {
+    height: 60%;
+    float: right;
+    padding-right: 1.5em;
+    margin-top: 0.6em;
+}
+
+.topbar_middle {
+    display: inline-block;
+    font-size: 1.5em;
+    line-height: 2em;
+    vertical-align: middle;
+}
