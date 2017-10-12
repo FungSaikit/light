@@ -1,0 +1,196 @@
+body{
+    background-color: #f4f4f4;
+}
+
+.placeholder {
+    height: 3rem;
+}
+
+.customerinfo {
+    margin-top: 0.5rem;
+    height: 5em;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+}
+
+.customerinfoleft {
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    display: inline-block;
+}
+
+.customerinfoleft img {
+    width: 1.2rem;
+    margin: auto 0.4rem;
+}
+
+.customerinforight {
+    margin: 0.5rem;
+    flex-grow: 1;
+}
+
+.info {
+    font-size: 0.8rem;
+    color: #636363;
+}
+
+.address {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    vertical-align: middle;
+}
+
+.goods {
+    width: 100%;
+    height: 13rem;
+    background-color: #fff;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.goodsnumber_div {
+    height: 2rem;
+    border-bottom: 1px #e5e5e5 solid;
+}
+
+.goodsnumber {
+    line-height: 2rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    margin-left: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.goodsinfo {
+    height: 8rem;
+    border-bottom: 1px #e5e5e5 solid;
+    display: flex;
+}
+
+.goodspic {
+    display: inline-block;
+    width: 8rem;
+    height: 8rem;
+
+}
+
+.goodspic img {
+    margin: 0.5rem;
+    width: 7rem;
+    height: 7rem;
+}
+
+.goodsdetail {
+    display: flex;
+    height: 8rem;
+    flex-grow: 1;
+    flex-flow: column;
+}
+
+.goodstitle {
+    margin-top: 0.5rem;
+    height: 1.75rem;
+}
+
+.goodstitle_span {
+    display: inline-block;
+    width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.75rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    vertical-align: middle;
+}
+
+.goodsmodel {
+    height: 1.75rem;
+}
+
+.goodsmodel_span {
+    color: #999;
+    font-size: 0.8rem;
+    line-height: 1.75rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    vertical-align: middle;
+    word-break: break-all;
+}
+
+.goodsprice {
+    height: 1.75rem;
+}
+
+.goodsprice_span {
+    color: #f55e0b;
+    line-height: 1.75rem;
+}
+
+.goodsnumber_span {
+    font-size: 0.8rem;
+    color: #999;
+    line-height: 1.75rem;
+    margin-right: 0.5rem;
+    float: right;
+}
+
+.roundbutton {
+    display: inline-block;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    width: 5.5rem;
+    border: 1px #3e9f34 solid;
+    border-radius: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #3e9f34;
+    margin-right: 0.5rem;
+    float: right;
+    font-size: 0.8rem;
+}
+
+
+.menubutton {
+    display: inline-block;
+    width: 49.75%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    line-height: 2.8rem;
+    background-color: #fff;
+}
+
+.orderstatus {
+    margin-top: 0.5rem;
+    width: 100%;
+    background-color: #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.statusinfo {
+    color: #a9a9a9;
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    vertical-align: middle;
+    word-break: break-all;
+}
