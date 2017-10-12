@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.topbar {
+    height: 3rem;
+    background-color: #f38200;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.topbar_left {
+    height: 60%;
+    float: left;
+    padding-left: 1.5rem;
+    margin-top: 0.6rem;
+}
+
+.topbar_right {
+    height: 60%;
+    float: right;
+    padding-right: 1.5rem;
+    color: #fff;
+    line-height: 3rem;
+}
+
+.topbar_middle {
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    color: #fff;
+}

@@ -143,6 +143,12 @@ table {
 .goods_md {
     font-size: 0.6em;
     color: #9a9a9a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    vertical-align: middle;
 }
 
 .goods_prz {
@@ -194,4 +200,60 @@ table {
     margin-top: 0.1em;
     border: 1px solid #eee;
     background-color: #fff;
+}
+
+.emptycart {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    margin: auto;
+    width: 10em;
+    height: 15em;
+    text-align: center;
+}
+
+.emptycart img {
+    width: 100%;
+}
+
+.emptycart div {
+    margin-bottom: 10%;
+}
+
+.emptycart button {
+    width: 100%;
+    height: 15%;
+    background-color: #f38200;
+    border: 0;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 1.5em;
+}
+
+.pay_wait {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.center{
+    width: 10em;
+    height: 15em;
+    position: fixed;
+    margin: auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    text-align: center;
+    color: white;
+}
+
+.center img {
+    width: 100%;
 }

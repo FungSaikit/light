@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>东方百泰</title>
+    <link rel="stylesheet" href="./CSS/topbar_orange.css">
+</head>
+
+<link rel="stylesheet" href="./CSS/search_bar_white.css">
+<link rel="stylesheet" href="./CSS/order_list.css">
+
+<body>
+
+<div class="topbar">
+    <a href="#"><img class="topbar_left" src="./IMG/top_bar/back_white.png" alt="返回"></a>
+    <span class="topbar_middle">订单列表</span>
+    <span class="topbar_right">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+</div>
+
+<div class="placeholder">
+    什么都没有了哦
+</div>
+
+<div class="search">
+    <div class="searchframe">
+        <img class="search_icon" src="./IMG/search_bar/search_black.png" alt="搜索">
+        <input class="search_input" type="text" placeholder="请输入你要查找的内容">
+    </div>
+</div>
+
+<div class="selectOrder">
+    <ul>
+        <li class="select_li"><a class="select_a" get="0" href="#" id="selected_a" onclick="selectFunction(this)">全部</a>
+        </li>
+        <li class="select_li"><a class="select_a" get="1" href="#" onclick="selectFunction(this)">待付款</a></li>
+        <li class="select_li"><a class="select_a" get="2" href="#" onclick="selectFunction(this)">待发货</a></li>
+        <li class="select_li"><a class="select_a" get="3" href="#" onclick="selectFunction(this)">待收货</a></li>
+        <li class="select_li"><a class="select_a" get="4" href="#" onclick="selectFunction(this)">待评价</a></li>
+    </ul>
+</div>
+
+<div class="orderlist">
+
+    <div class="goods">
+        <div class="goodsnumber_div">
+            <span class="goodsnumber">订单号：201754312893091824124312128930918241243121289309182412431212893091824124312</span>
+        </div>
+        <div class="goodsinfo">
+            <div class="goodspic">
+                <img src="./IMG/play_list/img1.jpg" alt="图片">
+            </div>
+            <div class="goodsdetail">
+                <div class="goodstitle">
+                    <span class="goodstitle_span">七彩LED哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span>
+                </div>
+                <div class="goodsmodel">
+                    <span class="goodsmodel_span">型号:XF020-香槟金-abcdefghijklmnopqrstuvwxyz</span>
+                </div>
+                <div class="goodsprice">
+                    <span class="goodsprice_span">￥950</span>
+                    <span class="goodsnumber_span">数量：2</span>
+                </div>
+                <div class="goodsservice">
+                    <a href="#" class="roundbutton servicebutton">
+                        申请售后
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="goodsmenu">
+            <a href="#" class="roundbutton evaluationbutton">评价</a>
+            <a href="#" class="roundbutton">查看详情</a>
+            <p class="roundbutton customerbutton">买家:湖里云</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+    var selectOption = document.getElementsByClassName("select_a");
+    var orderList = document.getElementsByClassName("orderlist")[0];
+    var loading = document.getElementById("loading");
+
+    function selectFunction(object) {
+        /*切换标签*/
+        for (var i = 0; i < selectOption.length; i++) {
+            selectOption[i].id = "";
+        }
+        object.id = "selected_a";
+        /*清空列表*/
+        order_list.innerHTML = "";
+
+
+
+    }
+
+</script>
+
+</html>
