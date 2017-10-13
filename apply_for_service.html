@@ -219,7 +219,7 @@
             display: inline-block;
             height: 5rem;
             width: 5rem;
-            border: 1px #868686 dotted;
+            border: 1px #868686 solid;
             margin: 0.5rem;
             text-decoration: none;
             font-size: 0.8rem;
@@ -249,6 +249,19 @@
             max-width: 100%;
             max-height: 100%;
             vertical-align: middle;
+        }
+
+        .deletepic {
+            /*height: 1rem;
+            width: 1rem;*/
+            float: right;
+            position: relative;
+            bottom: 5rem;
+        }
+
+        .deletepic img {
+            width: 2rem;
+            height: 2rem;
         }
 
     </style>
@@ -287,10 +300,12 @@
     </div>
     <div class="service_div">
         <div class="leftbutton button_div">
-            <button class="roundbutton service_button button_selected" id="return" onclick="changeService(this)">退货/退款</button>
+            <button class="roundbutton service_button button_selected" id="return" onclick="changeService(this)">退货/退款
+            </button>
         </div>
         <div class="rightbutton button_div">
-            <button class="roundbutton service_button button_unselected" id="send" onclick="changeService(this)">补发配件</button>
+            <button class="roundbutton service_button button_unselected" id="send" onclick="changeService(this)">补发配件
+            </button>
         </div>
         <div style="height: 1rem; width: 100%;">
 
@@ -328,9 +343,13 @@
             <span>(最多三张)</span>
         </a>
 
-        <a class="picture_a" id="pic1" href="javascript:void(0)" onclick="deletePic(this)">
+        <a class="picture_a" id="pic1" href="javascript:void(0)" onclick="previewPicture(this)">
             <img src="./IMG/play_list/img1.jpg" class="picture">
+            <button class="deletepic" onclick="deletePic(this, event)">
+                <img src="./IMG/service/x.png">
+            </button>
         </a>
+
 
 
     </div>
@@ -350,45 +369,66 @@
     function addPicture() {
         var picList = document.getElementsByClassName("picture_a");
 
-        if(picList.length >= 3){
+        if (picList.length >= 3) {
             alert("只能上传三张凭证哦");
         } else {
-            /*
-                这里调用微信上传接口
-            */
             var pictureA = document.createElement("a");
             pictureA.className = "picture_a";
             pictureA.id = "pic" + (picList.length + 1);
             pictureA.href = "javascript:void(0)";
-            pictureA.setAttribute("onclick", "deletePic(this)");
+            pictureA.setAttribute("onclick", "previewPicture(this)");
             var picImg = document.createElement("img");
-            picImg.src = "./IMG/play_list/img1.jpg";
+            picImg.src = "./IMG/play_list/img1.jpg";/*图片地址*/
             picImg.className = "picture";
+            var deletePic = document.createElement("button");
+            deletePic.className = "deletepic";
+            deletePic.setAttribute("onclick", "deletePic(this, event)");
+            var deleteImg = document.createElement("img");
+            deleteImg.src = "./IMG/service/x.png";
+            deletePic.appendChild(deleteImg);
             pictureA.appendChild(picImg);
+            pictureA.appendChild(deletePic);
             uploadImg.appendChild(pictureA);
         }
     }
-    
+
     function reorderPic() {
         var picList = document.getElementsByClassName("picture_a");
-        for (var i = 0; i < picList.length; i++){
+        for (var i = 0; i < picList.length; i++) {
             picList[i].id = "pic" + ( i + 1 );
         }
     }
 
-    function deletePic(object) {
+    function deletePic(object, event) {
+        object = object.parentNode;
         if (confirm("您确定要删除第" + object.id.substr(3) + "张图片吗？")) {
             object.parentNode.removeChild(object);
             reorderPic();
         }
+        event.stopPropagation();
     }
-    
+
     function changeService(object) {
         for (var i = 0; i < service_button.length; i++) {
             service_button[i].className = "roundbutton service_button button_unselected";
         }
         object.className = "roundbutton service_button button_selected";
         reason.innerHTML = object.id == "return" ? "退货/退款<br>原因" : "问题描述";
+    }
+    
+    function previewPicture(object) {
+
+        var picList = document.getElementsByClassName("picture_a");
+        var picArray = [];
+        for (var i = 0; i < picList.length; i++) {
+            picArray.push(picList[i].childNodes[1].src);
+        }
+        console.log(picArray);
+
+        /*wx.previewImage({
+            current: object.childNodes[1].src, // 当前显示图片的http链接
+            urls: [] // 需要预览的图片http链接列表
+        });*/
     }
 
 </script>
