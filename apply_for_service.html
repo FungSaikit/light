@@ -5,10 +5,392 @@
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
     <title>东方百泰</title>
+    <link rel="stylesheet" href="./CSS/topbar_orange.css">
 
+    <style type="text/css">
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .block {
+            margin-top: 0.5rem;
+            background-color: #fff;
+            width: 100%;
+        }
+
+        .goodsdetails {
+            height: 13rem;
+        }
+
+        .post_button {
+            display: block;
+            position: fixed;
+            bottom: 0;
+            height: 3rem;
+            text-align: center;
+            font-size: 1.2rem;
+            background-color: #f38200;
+            color: #fff;
+            width: 100%;
+            border: 0;
+        }
+
+        .goodsinfotop {
+            height: 2rem;
+            width: 100%;
+            border-bottom: 1px #d5d5d5 solid;
+            line-height: 2rem;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: break-word;
+            font-size: 0.9rem;
+        }
+
+        .goodsinfo {
+            height: 8rem;
+            border-bottom: 1px #e5e5e5 solid;
+            display: flex;
+        }
+
+        .goodspic {
+            display: inline-block;
+            width: 8rem;
+            height: 8rem;
+
+        }
+
+        .goodspic img {
+            margin: 0.5rem;
+            width: 7rem;
+            height: 7rem;
+        }
+
+        .goodsdetail {
+            display: flex;
+            height: 8rem;
+            flex-grow: 1;
+            flex-flow: column;
+        }
+
+        .goodstitle {
+            margin-top: 0.5rem;
+            height: 1.75rem;
+        }
+
+        .goodstitle_span {
+            display: inline-block;
+            width: 100%;
+            font-size: 0.9rem;
+            line-height: 1.75rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            vertical-align: middle;
+        }
+
+        .goodsmodel {
+            height: 1.75rem;
+        }
+
+        .goodsmodel_span {
+            color: #999;
+            font-size: 0.8rem;
+            line-height: 1.75rem;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            vertical-align: middle;
+            word-break: break-all;
+        }
+
+        .goodsprice {
+            height: 1.75rem;
+        }
+
+        .goodsprice_span {
+            color: #f55e0b;
+            line-height: 1.75rem;
+        }
+
+        .goodsnumber_span {
+            font-size: 0.8rem;
+            color: #999;
+            line-height: 1.75rem;
+            margin-right: 0.5rem;
+            float: right;
+        }
+
+        .roundbutton {
+            display: inline-block;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            width: 5.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.8rem;
+            background-color: #fff;
+        }
+
+        .service_div {
+            height: 3rem;
+            width: 100%;
+        }
+
+        .button_unselected {
+            border: 1px #999999 solid;
+            color: #000;
+        }
+
+        .button_selected {
+            border: 1px #f38200 solid;
+            color: #f38200;
+        }
+
+        .button_div {
+            width: 49.75%;
+            background-color: #fff;
+            height: 2.9rem;
+            line-height: 2.9rem;
+            text-align: center;
+        }
+
+        .leftbutton {
+            float: left;
+        }
+
+        .rightbutton {
+            float: right;
+        }
+
+        .reason {
+            height: 4rem;
+            display: flex;
+        }
+
+        #reasontitle {
+            display: inline-block;
+            width: 6rem;
+            text-align: center;
+            padding-top: 0.5rem;
+        }
+
+        #reasoncontent {
+            display: inline-block;
+            flex-grow: 1;
+            padding: 0;
+        }
+
+        .remarks {
+            height: 2rem;
+            display: flex;
+        }
+
+        .remarkstitle {
+            display: inline-block;
+            width: 6rem;
+            height: 2rem;
+            line-height: 2rem;
+        }
+
+        .remarkscontent {
+            flex-grow: 1;
+        }
+
+        .uploadtitle {
+            height: 2rem;
+            line-height: 2rem;
+            border-bottom: 1px #d5d5d5 solid;
+        }
+
+        .uploadimg {
+            width: 100%;
+        }
+
+        .uploadimg a {
+            display: inline-block;
+            height: 5rem;
+            width: 5rem;
+            border: 1px #868686 dotted;
+            margin: 0.5rem;
+            text-decoration: none;
+            font-size: 0.8rem;
+            color: #a8a8a8;
+            vertical-align: top;
+            text-align: center;
+        }
+
+        .uploadpicture {
+            display: inline-block;
+            width: 1.6rem;
+            margin: 0.5rem 1.7rem 0 1.7rem;
+        }
+
+        .picture_a {
+            display: inline-block;
+            height: 5rem;
+            width: 5rem;
+            line-height: 5rem;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .picture {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+
+    </style>
 
 </head>
 <body>
+<div class="topbar">
+    <a href="#"><img class="topbar_left" src="./IMG/top_bar/back_white.png" alt="返回"></a>
+    <span class="topbar_middle">订单详情</span>
+    <span class="topbar_right">&nbsp&nbsp&nbsp&nbsp&nbsp</span>
+</div>
+
+<div class="placeholder"></div>
+
+<div class="block goodsdetails">
+    <div class="goodsinfotop">
+        &nbsp&nbsp产品编号:888888888888888888888888888888888888888888888888888888888
+    </div>
+    <div class="goodsinfo">
+        <div class="goodspic">
+            <img src="./IMG/play_list/img1.jpg" alt="图片">
+        </div>
+        <div class="goodsdetail">
+            <div class="goodstitle">
+                <span class="goodstitle_span">七彩LED哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span>
+            </div>
+            <div class="goodsmodel">
+                <span class="goodsmodel_span">型号:XF020-香槟金-abcdefghijklmnopqrstuvwxyz</span>
+            </div>
+            <div style="height: 2rem;"></div>
+            <div class="goodsprice">
+                <span class="goodsprice_span">￥950</span>
+                <span class="goodsnumber_span">数量：2</span>
+            </div>
+        </div>
+    </div>
+    <div class="service_div">
+        <div class="leftbutton button_div">
+            <button class="roundbutton service_button button_selected" id="return" onclick="changeService(this)">退货/退款</button>
+        </div>
+        <div class="rightbutton button_div">
+            <button class="roundbutton service_button button_unselected" id="send" onclick="changeService(this)">补发配件</button>
+        </div>
+        <div style="height: 1rem; width: 100%;">
+
+        </div>
+        <div style="height: 1rem; width: 100%; background-color: #f4f4f4;">
+
+        </div>
+    </div>
+</div>
+
+<div class="block reason">
+    <div id="reasontitle">
+        退货/退款<br>原因
+    </div>
+    <textarea id="reasoncontent">
+
+    </textarea>
+</div>
+
+<div class="block remarks">
+    <div class="remarkstitle">
+        &nbsp&nbsp备注说明
+    </div>
+    <input class="remarkscontent" type="text" placeholder="选填">
+</div>
+
+<div class="block upload">
+    <div class="uploadtitle">&nbsp&nbsp上传凭证</div>
+    <div class="uploadimg">
+        <a href="javascript:void(0)" onclick="addPicture()">
+            <img src="./IMG/service/picture.png" alt="" class="uploadpicture">
+            <br>
+            <span>上传凭证</span>
+            <br>
+            <span>(最多三张)</span>
+        </a>
+
+        <a class="picture_a" id="pic1" href="javascript:void(0)" onclick="deletePic(this)">
+            <img src="./IMG/play_list/img1.jpg" class="picture">
+        </a>
+
+
+    </div>
+</div>
+
+<div class="placeholder" style="margin-top: 0.5rem"></div>
+
+<button class="post_button">提交</button>
 
 </body>
+
+<script type="text/javascript">
+    var uploadImg = document.getElementsByClassName("uploadimg")[0];
+    var service_button = document.getElementsByClassName(" service_button");
+    var reason = document.getElementById("reasontitle");
+
+    function addPicture() {
+        var picList = document.getElementsByClassName("picture_a");
+
+        if(picList.length >= 3){
+            alert("只能上传三张凭证哦");
+        } else {
+            /*
+                这里调用微信上传接口
+            */
+            var pictureA = document.createElement("a");
+            pictureA.className = "picture_a";
+            pictureA.id = "pic" + (picList.length + 1);
+            pictureA.href = "javascript:void(0)";
+            pictureA.setAttribute("onclick", "deletePic(this)");
+            var picImg = document.createElement("img");
+            picImg.src = "./IMG/play_list/img1.jpg";
+            picImg.className = "picture";
+            pictureA.appendChild(picImg);
+            uploadImg.appendChild(pictureA);
+        }
+    }
+    
+    function reorderPic() {
+        var picList = document.getElementsByClassName("picture_a");
+        for (var i = 0; i < picList.length; i++){
+            picList[i].id = "pic" + ( i + 1 );
+        }
+    }
+
+    function deletePic(object) {
+        if (confirm("您确定要删除第" + object.id.substr(3) + "张图片吗？")) {
+            object.parentNode.removeChild(object);
+            reorderPic();
+        }
+    }
+    
+    function changeService(object) {
+        for (var i = 0; i < service_button.length; i++) {
+            service_button[i].className = "roundbutton service_button button_unselected";
+        }
+        object.className = "roundbutton service_button button_selected";
+        reason.innerHTML = object.id == "return" ? "退货/退款<br>原因" : "问题描述";
+    }
+
+</script>
+
 </html>
