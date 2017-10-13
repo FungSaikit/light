@@ -148,22 +148,6 @@ body{
     float: right;
 }
 
-.roundbutton {
-    display: inline-block;
-    height: 1.5rem;
-    line-height: 1.5rem;
-    width: 5.5rem;
-    border: 1px #3e9f34 solid;
-    border-radius: 1rem;
-    text-align: center;
-    text-decoration: none;
-    color: #3e9f34;
-    margin-right: 0.5rem;
-    float: right;
-    font-size: 0.8rem;
-}
-
-
 .menubutton {
     display: inline-block;
     width: 49.75%;
@@ -193,4 +177,14 @@ body{
     -webkit-box-orient: vertical;
     vertical-align: middle;
     word-break: break-all;
+}
+
+.bottombar {
+    height: 3rem;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    line-height: 3rem;
+    text-align: center;
 }
