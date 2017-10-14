@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28e658b4-c568-4ccd-a488-0f6ae28e8fd0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CSS/classification.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classification.html" afterPath="$PROJECT_DIR$/classification.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -49,8 +49,8 @@
       <file leaf-file-name="classification.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/classification.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="651">
-              <caret line="360" column="69" lean-forward="true" selection-start-line="360" selection-start-column="69" selection-end-line="360" selection-end-column="69" />
+            <state relative-caret-position="-1944">
+              <caret line="8" column="57" lean-forward="false" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -59,6 +59,16 @@
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classification.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSS/classification.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="773">
+              <caret line="124" column="1" lean-forward="false" selection-start-line="124" selection-start-column="1" selection-end-line="124" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,8 +106,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -136,6 +146,7 @@
         <option value="$PROJECT_DIR$/order_details.html" />
         <option value="$PROJECT_DIR$/CSS/search_bar_white.css" />
         <option value="$PROJECT_DIR$/CSS/topbar.css" />
+        <option value="$PROJECT_DIR$/CSS/classification.css" />
         <option value="$PROJECT_DIR$/classification.html" />
       </list>
     </option>
@@ -216,35 +227,6 @@
               <item name="light" type="b2602c69:ProjectViewProjectNode" />
               <item name="light" type="462c0819:PsiDirectoryNode" />
               <item name="CSS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="light" type="b2602c69:ProjectViewProjectNode" />
-              <item name="light" type="462c0819:PsiDirectoryNode" />
-              <item name="IMG" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="light" type="b2602c69:ProjectViewProjectNode" />
-              <item name="light" type="462c0819:PsiDirectoryNode" />
-              <item name="IMG" type="462c0819:PsiDirectoryNode" />
-              <item name="classification" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="light" type="b2602c69:ProjectViewProjectNode" />
-              <item name="light" type="462c0819:PsiDirectoryNode" />
-              <item name="IMG" type="462c0819:PsiDirectoryNode" />
-              <item name="light" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="light" type="b2602c69:ProjectViewProjectNode" />
-              <item name="light" type="462c0819:PsiDirectoryNode" />
-              <item name="IMG" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="light" type="b2602c69:ProjectViewProjectNode" />
-              <item name="light" type="462c0819:PsiDirectoryNode" />
-              <item name="IMG" type="462c0819:PsiDirectoryNode" />
-              <item name="top_bar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="light" type="b2602c69:ProjectViewProjectNode" />
@@ -334,12 +316,12 @@
       <workItem from="1507599435985" duration="4708000" />
       <workItem from="1507607350853" duration="20760000" />
       <workItem from="1507686803730" duration="34000" />
-      <workItem from="1507686863705" duration="84896000" />
+      <workItem from="1507686863705" duration="85190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219052000" />
+    <option name="totallyTimeSpent" value="219346000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -376,27 +358,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#tr#0;n#table#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#tr#0;n#table#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#tr#0;n#table#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CSS/search_bar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -776,10 +737,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/classification.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="773">
+          <caret line="124" column="1" lean-forward="false" selection-start-line="124" selection-start-column="1" selection-end-line="124" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classification.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="360" column="69" lean-forward="true" selection-start-line="360" selection-start-column="69" selection-end-line="360" selection-end-column="69" />
+        <state relative-caret-position="-1944">
+          <caret line="8" column="57" lean-forward="false" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />

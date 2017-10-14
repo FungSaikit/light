@@ -1,0 +1,125 @@
+button {
+    outline: none;
+}
+
+.left {
+    background-color: #e6e6e6;
+    display: inline-block;
+    width: 20%;
+}
+
+.class {
+    display: block;
+    height: 3rem;
+    font-size: 1.2rem;
+    border: 0;
+    border-bottom: 1px #dedede solid;
+    background-color: #fff;
+    width: 100%;
+    border-left: 2px #fff solid;
+}
+
+#selectedclass_button {
+    border-left-color: #ef7b00;
+    background-color: #f0f0f0;
+    color: #ef7b00;
+}
+
+.right {
+    display: inline-block;
+    background-color: lightgray;
+    width: 80%;
+    overflow: auto;
+}
+
+.bottomBar {
+    height: 3rem;
+    border-top: 1px darkgray solid;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.bottom_button {
+    height: 2rem;
+    background-color: #fff;
+    border: 1px lightgray solid;
+    color: gray;
+    border-radius: 0.5rem;
+    width: 20%;
+    font-size: 1rem;
+    margin: 2%;
+}
+
+.alloption {
+    display: inline-block;
+    margin: 0.3rem 2.5% 0 2.5%;
+    height: 3rem;
+    background-color: #fff;
+    width: 95%;
+    border: 1px #fff solid;
+    border-radius: 0.2rem;
+    line-height: 3rem;
+    color: #000;
+    font-size: 1rem;
+}
+
+.classoption {
+    display: inline-block;
+    height: 6rem;
+    width: 30%;
+    background-color: #fff;
+    border: 1px #fff solid;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    margin-left: 2.5%;
+    float: left;
+}
+
+.priceoption {
+    float: left;
+    height: 3rem;
+    width: 45%;
+    background-color: #fff;
+    border: 1px #fff solid;
+    border-radius: 0.2rem;
+    margin: 0.3rem 2.5% 0 2.5%;
+    font-size: 1rem;
+}
+
+.classoptionselected {
+    border-color: #f38200;
+    color: #f38200;
+    font-weight: bold;
+}
+
+.classimg {
+    height: 3rem;
+    width: auto;
+    max-width: 100%;
+}
+
+.diytitle {
+    background-color: #fff;
+    height: 3rem;
+    line-height: 3rem;
+    width: 95%;
+    display: inline-block;
+    margin-top: 1rem;
+    margin-left: 2.5%;
+    text-align: center;
+    border-radius: 0.2rem;
+}
+
+.money_input {
+    display: inline-block;
+    float: left;
+    height: 3rem;
+    width: 45%;
+    background-color: #fff;
+    border: none;
+    border-radius: 0.2rem;
+    margin: 0.3rem 2.5% 0 2.5%;
+    font-size: 1rem;
+    text-align: center;
+}
