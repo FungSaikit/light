@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>东方百泰</title>
+    <style type="text/css">
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card_div {
+            background-color: #ff6b21;
+            height: 30%;
+            vertical-align: middle;
+            text-align: center;
+            color: #fff;
+            white-space: nowrap;
+            overflow: auto;
+        }
+
+        .card {
+            display: inline-block;
+            width: 80%;
+            height: 90%;
+            margin: 2% 10% 0 10%;
+            background-color: #ff8a30;
+            border-right: 3px #ee631e solid;
+            border-bottom: 4px #ee631e solid;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            color: white;
+            position: relative;
+        }
+
+        .span1 {
+            margin-top: 5%;
+            margin-left: 1rem;
+            display: block;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        .span2 {
+            font-size: 1.8rem;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .span3 {
+            font-size: 0.8rem;
+        }
+
+        .span4 {
+            display: block;
+            font-size: 0.7rem;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+
+        #card2 {
+            top: 0
+        }
+
+        .page {
+            color: #fff;
+            height: 1rem;
+            line-height: 1rem;
+            width: 100%;
+            background-color: #ff6b21;
+            text-align: center;
+        }
+
+        .bottom {
+            flex-grow: 1;
+            position: relative;
+            padding: 1rem;
+            overflow: scroll;
+        }
+
+        .details {
+            border-bottom: 1px #efefef solid;
+        }
+
+        .detailstop {
+            height: 2rem;
+        }
+
+        .detailsbottom {
+            height: 2rem;
+        }
+
+        .price {
+            line-height: 2rem;
+            float: left;
+            font-size: 1rem;
+        }
+
+        .status {
+            line-height: 2rem;
+            float: right;
+            color: #027e02;
+        }
+
+        .type {
+            line-height: 2rem;
+            float: left;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .date {
+            line-height: 2rem;
+            float: right;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .head {
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .end {
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .nolist {
+            width: 10rem;
+            height: 2rem;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            height: 3rem;
+        }
+
+        .option {
+            float: left;
+            width: 25%;
+            text-align: center;
+            line-height: 3rem;
+            text-decoration: none;
+            color: #000;
+        }
+
+        #selected {
+            color: #ff6b21;
+            border-bottom: 2px #ff6b21 solid;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="card_div">
+
+    <a class="card" id="card1" href="withdraw.html">
+        <span class="span1">可提现金额</span>
+        <span class="span2">￥39606.00</span><span class="span3">(点击提现)</span><br>
+        <span class="span4">最后更新时间:</span>
+    </a>
+
+    <a class="card" id="card2">
+        <span class="span1">待结金额</span>
+        <span class="span2">￥3000.00</span>
+        <span class="span4">最后更新时间:</span>
+    </a>
+
+</div>
+<div class="page">
+    ●○
+</div>
+
+<ul>
+    <li><a class="option" onclick="select(this)" id="selected" href="javascript: void(0)">全部</a></li>
+    <li><a class="option" onclick="select(this)" href="javascript: void(0)">成功</a></li>
+    <li><a class="option" onclick="select(this)" href="javascript: void(0)">失败</a></li>
+    <li><a class="option" onclick="select(this)" href="javascript: void(0)">待结算</a></li>
+</ul>
+
+<div class="bottom">
+
+    <div class="head">———— 结算明细 ————</div>
+    <hr>
+
+    <div class="details">
+        <div class="detailstop">
+            <span class="price">￥58.90</span>
+            <span class="status">成功</span>
+        </div>
+        <div class="detailsbottom">
+            <span class="type">退款</span>
+            <span class="date">2017-09-20</span>
+        </div>
+    </div>
+    <div class="details">
+        <div class="detailstop">
+            <span class="price">￥58.90</span>
+            <span class="status">成功</span>
+        </div>
+        <div class="detailsbottom">
+            <span class="type">退款</span>
+            <span class="date">2017-09-20</span>
+        </div>
+    </div>
+    <div class="details">
+        <div class="detailstop">
+            <span class="price">￥58.90</span>
+            <span class="status">成功</span>
+        </div>
+        <div class="detailsbottom">
+            <span class="type">退款</span>
+            <span class="date">2017-09-20</span>
+        </div>
+    </div>
+
+
+    <br>
+    <div class="end">———— 没有更多啦 ————</div>
+
+    <div class="nolist">
+        没有本类结算哦
+    </div>
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+    var body = document.getElementsByTagName("body")[0];
+    var timeSpan = document.getElementsByClassName("span4")[0];
+    var cardDiv = document.getElementsByClassName("card_div")[0];
+    var deviceWidth = window.screen.width;
+    var page = document.getElementsByClassName("page")[0];
+    var options = document.getElementsByClassName("option");
+    var currentDate = new Date();
+    var firstX;
+    var scrollTimer;
+
+    var listLength = document.getElementsByClassName("details").length;
+
+    document.getElementsByClassName("nolist")[0].hidden = listLength;
+    document.getElementsByClassName("end")[0].hidden = !listLength;
+
+    body.style.height = window.screen.height + "px";
+    timeSpan.innerHTML = "最后更新时间：" + currentDate.toLocaleString();
+
+    cardDiv.addEventListener("touchstart", touch, false);
+    cardDiv.addEventListener("touchend", touch, false);
+    cardDiv.addEventListener("scroll", touch, false);
+
+    function select(object) {
+        for (var i = 0; i < options.length; i++) {
+            options[i].id = "";
+        }
+        object.id = "selected";
+    }
+
+    function move(dx) {
+        if (cardDiv.scrollLeft <= dx + 1 && cardDiv.scrollLeft >= dx - 1) {
+            if (dx == 0) {
+                page.innerHTML = "●○";
+            } else {
+                page.innerHTML = "○●";
+            }
+            cardDiv.style.overflow = "auto";
+            return true;
+        }
+
+        if (cardDiv.scrollLeft < dx) {
+            cardDiv.scrollLeft += 2;
+        } else {
+            cardDiv.scrollLeft -= 2;
+        }
+
+        var order = "move(" + dx + ")";
+        setTimeout(order, 1);
+    }
+
+    function touch(event) {
+        event = event || window.event;
+
+        switch (event.type) {
+            case "touchstart":
+                firstX = cardDiv.scrollLeft;
+                break;
+            case "scroll":
+                clearTimeout(scrollTimer)
+                scrollTimer = setTimeout(function () {
+                    if (Math.abs(cardDiv.scrollLeft - firstX) > 0) {
+                        if (cardDiv.scrollLeft - firstX > 0) {//向左划
+                            console.log("下一张");
+                            move(deviceWidth);
+                        } else if (cardDiv.scrollLeft - firstX < 0) {
+                            console.log("上一张");
+                            move(0);
+                        }
+                    }
+                }, 100);
+                break;
+            default:
+                break
+        }
+    }
+
+
+</script>
+</html>
