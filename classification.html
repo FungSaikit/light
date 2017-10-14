@@ -335,18 +335,32 @@
         }
     }
 
+    function selectedNumber(objects) {
+        var number = 0;
+        for (var i = 0; i < objects.length; i++) {
+            if (objects[i].className.indexOf("classoptionselected") >= 0) {
+                ++number;
+            }
+        }
+        return number;
+    }
+
     function selectOption(object) {
         var selectAllButton = object.parentNode.childNodes[1];
-        if (selectAllButton.className.indexOf("classoptionselected") > 0) {//如果全选按钮被选了
+        var thisClassArray = document.getElementsByClassName(object.parentNode.childNodes[1].id + "option");
+        if (selectAllButton.className.indexOf("classoptionselected") >= 0) {//如果全选按钮被选了
             selectAllButton.className = "alloption";//取消全选按钮
         }
 
-        if (object.className.indexOf("classoptionselected") > 0) {//如果本按钮被选了
+        if (object.className.indexOf("classoptionselected") >= 0) {//如果本按钮被选了
             var array = object.className.split(' ');
             object.className = "";
             array.forEach(function (t) {
                 object.className += (t != "classoptionselected") ? (t + " ") : "";
             })
+            if (!selectedNumber(thisClassArray)) {//如果取消掉最后一个，则自动点击全选
+                object.parentNode.childNodes[1].click();
+            }
         } else {//如果本按钮没有被选中
             object.className += " classoptionselected";
         }
