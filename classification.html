@@ -9,12 +9,18 @@
     <style type="text/css">
 
         body {
-            height: 1000rem;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        button {
+            outline: none;
         }
 
         .left {
+            background-color: #e6e6e6;
             display: inline-block;
-            width: 6rem;
+            width: 20%;
         }
 
         .class {
@@ -25,28 +31,112 @@
             border-bottom: 1px #dedede solid;
             background-color: #fff;
             width: 100%;
+            border-left: 2px #fff solid;
         }
 
         #selectedclass_button {
-            border-left: 2px #ef7b00 solid;
-            background-color: #eee;
+            border-left-color: #ef7b00;
+            background-color: #f0f0f0;
             color: #ef7b00;
         }
 
         .right {
             display: inline-block;
             background-color: lightgray;
-            flex-grow: 1;
+            width: 80%;
+            overflow: auto;
+        }
+
+        .bottomBar {
+            height: 3rem;
+            border-top: 1px darkgray solid;
+            line-height: 3rem;
             text-align: center;
         }
 
-        .inone {
+        .bottom_button {
+            height: 2rem;
             background-color: #fff;
-            display: inline-block;
-            margin-top: 0.5rem;
-            width: 90%;
-            height: 3rem;
+            border: 1px lightgray solid;
+            color: gray;
             border-radius: 0.5rem;
+            width: 20%;
+            font-size: 1rem;
+            margin: 2%;
+        }
+
+        .alloption {
+            display: inline-block;
+            margin: 0.3rem 2.5% 0 2.5%;
+            height: 3rem;
+            background-color: #fff;
+            width: 95%;
+            border: 1px #fff solid;
+            border-radius: 0.2rem;
+            line-height: 3rem;
+            color: #000;
+            font-size: 1rem;
+        }
+
+        .classoption {
+            display: inline-block;
+            height: 6rem;
+            width: 30%;
+            background-color: #fff;
+            border: 1px #fff solid;
+            border-radius: 0.2rem;
+            font-size: 1rem;
+            margin-top: 0.3rem;
+            margin-left: 2.5%;
+            float: left;
+        }
+
+        .priceoption {
+            float: left;
+            height: 3rem;
+            width: 45%;
+            background-color: #fff;
+            border: 1px #fff solid;
+            border-radius: 0.2rem;
+            margin: 0.3rem 2.5% 0 2.5%;
+            font-size: 1rem;
+        }
+
+        .classoptionselected {
+            border-color: #f38200;
+            color: #f38200;
+            font-weight: bold;
+        }
+
+        .classimg {
+            height: 3rem;
+            width: auto;
+            max-width: 100%;
+        }
+
+        .diytitle {
+            background-color: #fff;
+            height: 3rem;
+            line-height: 3rem;
+            width: 95%;
+            display: inline-block;
+            margin-top: 1rem;
+            margin-left: 2.5%;
+            text-align: center;
+            border-radius: 0.2rem;
+        }
+
+        .money_input {
+            display: inline-block;
+            float: left;
+            height: 3rem;
+            width: 45%;
+            background-color: #fff;
+            border: none;
+            border-radius: 0.2rem;
+            margin: 0.3rem 2.5% 0 2.5%;
+            font-size: 1rem;
+            text-align: center;
         }
 
     </style>
@@ -54,27 +144,150 @@
 <body>
 
 <div class="search">
-    <img src="./IMG/classification/dfbt.png">
+    <img src="./IMG/classification/dfbt.png" onclick="window.location.href = 'index.html'">
     <div class="searchframe" style="width: 5rem;flex-grow: 1; background-color:#f2f2f2;">
-        <img class="search_icon" src="./IMG/search_bar/search_black.png" alt="搜索">
+        <img style="height: 50%; margin-top: 0.6rem;" class="search_icon" src="./IMG/search_bar/search_black.png"
+             alt="搜索">
         <input class="search_input" type="text" placeholder="请输入要查找的内容"
                style="width: 5rem; flex-grow: 1;background-color:#f2f2f2;">
-        <img class="icon" src="./IMG/search_bar/clear_black.png" alt="删除">
+        <img style="height: 50%;margin-top: 0.6rem;" class="icon" src="./IMG/search_bar/clear_black.png" alt="删除"
+             onclick="clearSearch()">
     </div>
-    <img src="./IMG/search_bar/cs_black.png">
+    <img src="./IMG/search_bar/cs_black.png" onclick="askForClientService()">
 </div>
 
 <div style="display: flex; width: 100%; height: 100%;">
     <div class="left">
-        <button class="class" id="selectedclass_button" onclick="selectClass(this)">类型</button>
-        <button class="class" onclick="selectClass(this)">风格</button>
-        <button class="class" onclick="selectClass(this)">空间</button>
-        <button class="class" onclick="selectClass(this)">材质</button>
-        <button class="class" onclick="selectClass(this)">价格</button>
+        <button class="class" id="selectedclass_button" onclick="selectClass(this, 0)">类型</button>
+        <button class="class" onclick="selectClass(this, 1)">风格</button>
+        <button class="class" onclick="selectClass(this, 2)">空间</button>
+        <button class="class" onclick="selectClass(this, 3)">材质</button>
+        <button class="class" onclick="selectClass(this, 4)">价格</button>
     </div>
     <div class="right">
-        
+
+        <div class="typeclass subclass">
+            <button class="alloption classoptionselected" id="type" onclick="selectAll(this)">全部类型</button>
+            <button class="classoption typeoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-tablelamp.png">
+                <br>
+                吊灯1
+            </button>
+            <button class="classoption typeoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-ceiling.png">
+                <br>
+                吊灯1
+            </button>
+            <button class="classoption typeoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-pendant.png">
+                <br>
+                吊灯1
+            </button>
+            <button class="classoption typeoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-wall.png">
+                <br>
+                吊灯1
+            </button>
+
+        </div>
+        <div class="styleclass subclass" hidden>
+            <button class="alloption classoptionselected" id="style" onclick="selectAll(this)">全部风格</button>
+            <button class="classoption styleoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-tablelamp.png">
+                <br>
+                吊灯2
+            </button>
+            <button class="classoption styleoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-ceiling.png">
+                <br>
+                吊灯2
+            </button>
+            <button class="classoption styleoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-pendant.png">
+                <br>
+                吊灯2
+            </button>
+            <button class="classoption styleoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-wall.png">
+                <br>
+                吊灯2
+            </button>
+        </div>
+        <div class="spaceclass subclass" hidden>
+            <button class="alloption classoptionselected" id="space" onclick="selectAll(this)">全部空间</button>
+            <button class="classoption spaceoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-tablelamp.png">
+                <br>
+                吊灯3
+            </button>
+            <button class="classoption spaceoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-ceiling.png">
+                <br>
+                吊灯3
+            </button>
+            <button class="classoption spaceoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-pendant.png">
+                <br>
+                吊灯3
+            </button>
+            <button class="classoption spaceoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-wall.png">
+                <br>
+                吊灯3
+            </button>
+        </div>
+        <div class="materialclass subclass" hidden>
+            <button class="alloption classoptionselected" id="material" onclick="selectAll(this)">全部材质</button>
+            <button class="classoption materialoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-tablelamp.png">
+                <br>
+                吊灯4
+            </button>
+            <button class="classoption materialoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-ceiling.png">
+                <br>
+                吊灯4
+            </button>
+            <button class="classoption materialoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-pendant.png">
+                <br>
+                吊灯4
+            </button>
+            <button class="classoption materialoption" onclick="selectOption(this)">
+                <img class="classimg" src="./IMG/light/0-wall.png">
+                <br>
+                吊灯4
+            </button>
+        </div>
+        <div class="priceclass subclass" hidden>
+            <button class="alloption classoptionselected" id="price" onclick="selectAll(this)">全部价格</button>
+            <button class="priceoption" onclick="selectMoney(this)">500元以下</button>
+            <button class="priceoption" onclick="selectMoney(this)">500-1000元</button>
+            <button class="priceoption" onclick="selectMoney(this)">1000-2000元</button>
+            <button class="priceoption" onclick="selectMoney(this)">2000-4000元</button>
+            <button class="priceoption" onclick="selectMoney(this)">4000-6000元</button>
+            <button class="priceoption" onclick="selectMoney(this)">6000-8000元</button>
+            <button class="priceoption" onclick="selectMoney(this)">8000-10000元</button>
+            <button class="priceoption" onclick="selectMoney(this)">10000元以上</button>
+
+            &nbsp
+            <hr>
+
+            <div class="diytitle">自定义价格(元)</div>
+            <input class="money_input" type="number" onfocus="this.parentNode.childNodes[1].click()" placeholder="最低价">
+            <input class="money_input" type="number" onfocus="this.parentNode.childNodes[1].click()" placeholder="最高价">
+        </div>
+
     </div>
+</div>
+
+
+<div class="bottomBar">
+    <button class="bottom_button" onclick="reset()">重置</button>
+    <button class="bottom_button" onclick="window.location.href = 'index.html'">取消</button>
+    <button class="bottom_button" style="background-color: #f38200; color: white; border-color: #f38200; width: 40%;">
+        确定
+    </button>
 </div>
 
 </body>
@@ -82,14 +295,86 @@
 <script type="text/javascript">
 
     var classButton = document.getElementsByClassName("class");
+    var body = document.getElementsByTagName("body")[0];
+    var searchBar = document.getElementsByClassName("search")[0];
+    var searchInput = document.getElementsByClassName("search_input")[0];
+    var subClassDiv = document.getElementsByClassName("subclass");
+    var allSelectArray = document.getElementsByClassName("alloption");
+    var classBar = document.getElementsByClassName("class");
+    var moneyInput = document.getElementsByClassName("money_input")
 
-    function selectClass(object) {
+    /*设置网页高度*/
+    body.style.height = window.screen.height - (searchBar.clientHeight + 1) * 2 + "px";
+
+    function clearSearch() {
+        searchInput.value = "";
+    }
+
+    function askForClientService() {
+        /*客服*/
+    }
+
+    function selectClass(object, num) {
         for (var i = 0; i < classButton.length; i++) {
             classButton[i].id = "";
         }
         object.id = "selectedclass_button";
+
+        for (var i = 0; i < subClassDiv.length; i++) {
+            subClassDiv[i].hidden = !(i == num);
+        }
+    }
+
+    function selectAll(object) {
+        var buttonArray = document.getElementsByClassName(object.id + "option");
+        if (object.className.indexOf("classoptionselected") <= 0) {//如果没有被选
+            for (var i = 0; i < buttonArray.length; i++) {
+                buttonArray[i].className = "classoption " + object.id + "option";
+            }
+            object.className += " classoptionselected";
+        }
+    }
+
+    function selectOption(object) {
+        var selectAllButton = object.parentNode.childNodes[1];
+        if (selectAllButton.className.indexOf("classoptionselected") > 0) {//如果全选按钮被选了
+            selectAllButton.className = "alloption";//取消全选按钮
+        }
+
+        if (object.className.indexOf("classoptionselected") > 0) {//如果本按钮被选了
+            var array = object.className.split(' ');
+            object.className = "";
+            array.forEach(function (t) {
+                object.className += (t != "classoptionselected") ? (t + " ") : "";
+            })
+        } else {//如果本按钮没有被选中
+            object.className += " classoptionselected";
+        }
+    }
+
+    function reset() {
+        /*清除搜索栏*/
+        searchInput.value = "";
+        /*所有分类改为全选*/
+        for (var i = 0; i < allSelectArray.length; i++) {
+            allSelectArray[i].click();
+        }
+        /*返回第一个分类*/
+        classBar[0].click();
+        for (var i = 0; i < moneyInput.length; i++) {
+            moneyInput[i].value = "";
+        }
+    }
+
+    function selectMoney(object) {
+        selectOption(object);//执行选择方法
+        /*清除两个moneyInput的数据*/
+        for (var i = 0; i < moneyInput.length; i++) {
+            moneyInput[i].value = "";
+        }
     }
 
 </script>
+
 
 </html>
