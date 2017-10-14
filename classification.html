@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>东方百泰</title>
+    <link rel="stylesheet" href="./CSS/search_bar_white.css">
+    <style type="text/css">
+
+        body {
+            height: 1000rem;
+        }
+
+        .left {
+            display: inline-block;
+            width: 6rem;
+        }
+
+        .class {
+            display: block;
+            height: 3rem;
+            font-size: 1.2rem;
+            border: 0;
+            border-bottom: 1px #dedede solid;
+            background-color: #fff;
+            width: 100%;
+        }
+
+        #selectedclass_button {
+            border-left: 2px #ef7b00 solid;
+            background-color: #eee;
+            color: #ef7b00;
+        }
+
+        .right {
+            display: inline-block;
+            background-color: lightgray;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .inone {
+            background-color: #fff;
+            display: inline-block;
+            margin-top: 0.5rem;
+            width: 90%;
+            height: 3rem;
+            border-radius: 0.5rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="search">
+    <img src="./IMG/classification/dfbt.png">
+    <div class="searchframe" style="width: 5rem;flex-grow: 1; background-color:#f2f2f2;">
+        <img class="search_icon" src="./IMG/search_bar/search_black.png" alt="搜索">
+        <input class="search_input" type="text" placeholder="请输入要查找的内容"
+               style="width: 5rem; flex-grow: 1;background-color:#f2f2f2;">
+        <img class="icon" src="./IMG/search_bar/clear_black.png" alt="删除">
+    </div>
+    <img src="./IMG/search_bar/cs_black.png">
+</div>
+
+<div style="display: flex; width: 100%; height: 100%;">
+    <div class="left">
+        <button class="class" id="selectedclass_button" onclick="selectClass(this)">类型</button>
+        <button class="class" onclick="selectClass(this)">风格</button>
+        <button class="class" onclick="selectClass(this)">空间</button>
+        <button class="class" onclick="selectClass(this)">材质</button>
+        <button class="class" onclick="selectClass(this)">价格</button>
+    </div>
+    <div class="right">
+        
+    </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+    var classButton = document.getElementsByClassName("class");
+
+    function selectClass(object) {
+        for (var i = 0; i < classButton.length; i++) {
+            classButton[i].id = "";
+        }
+        object.id = "selectedclass_button";
+    }
+
+</script>
+
+</html>

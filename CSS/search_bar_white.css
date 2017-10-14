@@ -1,9 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .search {
     height: 3rem;
     width: 100%;
     background-color: #fff;
     border-bottom: 1px #bbbab6 solid;
     overflow: hidden;
+    display: flex;
 }
 
 .searchframe {
