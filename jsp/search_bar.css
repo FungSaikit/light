@@ -1,0 +1,49 @@
+.searchbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+    height: 1rem;
+}
+
+.searchbar input {
+    height: 1rem;
+    background-color: transparent;
+    color: #000;
+    border-style: none;
+    width: 80%;
+    height: 100%;
+    vertical-align: top;
+}
+
+.searchinput0::placeholder {
+    color: dimgrey;
+}
+
+#search_frame {
+    width: 70%;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.searchbarimg {
+    width: 1rem;
+    margin: 0.25rem;
+    vertical-align: middle;
+}
+
+
+.searchinputimg {
+    height: 1rem;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.topbar table {
+    height: 1.2rem;
+}

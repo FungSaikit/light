@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+
+<link rel="stylesheet" href="./search_bar.css">
+<link rel="stylesheet" href="./good_list.css">
+<link rel="stylesheet" href="./common.css" >
+<link rel="stylesheet" href="./hr.css">
+
+
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: #eeeeee;
+    }
+
+    a {
+        text-decoration: none;
+        color: #646464;
+    }
+
+    .playlist {
+        width: 100%;
+        height: 5rem;
+    }
+
+    .playlist img {
+        width: 100%;
+    }
+
+    .topline {
+        line-height: 2rem;
+        background-color: #fff;
+        margin-bottom: 0.1rem;
+        font-size: 0.5rem;
+    }
+
+    #topline_title {
+        display: inline-block;
+        color: orangered;
+        padding: 0.1rem;
+        width: 2rem;
+        font-weight: bold;
+    }
+
+    #topline_content {
+        color: #646464;
+        font-size: 0.5rem;
+        text-decoration: none;
+        text-overflow: ellipsis;
+    }
+
+    #top_content_div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 230px;
+        display: flex;
+    }
+
+    .lightblock {
+        background-color: #FFFFFF;
+        margin-bottom: 0.1rem;
+    }
+
+    .lightblockimg {
+        height: 2rem;
+        line-height: 3rem;
+    }
+
+    .lightblockspan {
+        height: 1rem;
+        font-size: 0.5rem;
+    }
+
+    .lightblock img {
+        width: 2em;
+        vertical-align: middle;
+    }
+
+    .lightblock table {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+    .lightblock td {
+        border: 1px #e6e6e6 solid;
+        width: 20%;
+    }
+
+    .lightblock tr {
+        height: 3rem;
+    }
+
+    .block {
+        background-color: #fff;
+        margin-bottom: 0.2rem;
+    }
+
+    .block table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .block1 {
+        width: 100%;
+        position: relative;
+        height: 2rem;
+        line-height: 2rem;
+    }
+
+    .block1link {
+        float: right;
+    }
+
+    .block1img {
+        width: 100%;
+        display: block;
+    }
+
+    .block1text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        vertical-align: middle;
+        color: #000;
+        padding-left: 0.5rem;
+        font-size: 0.5rem;
+    }
+
+    .block2 {
+        width: 3rem;
+
+    }
+
+    .block3 {
+        width: 3rem;
+    }
+
+    .blockleft {
+        width: 35%;
+        text-align: center;
+        font-size: 0.5rem;
+        height: 2rem;
+        line-height: 2rem;
+    }
+
+    .blockright {
+        width: 15%;
+        text-align: center;
+        border-right: 1px solid #e6e6e6;
+        font-size: 0.5rem;
+        height: 2rem;
+        line-height: 2rem;
+    }
+
+    .blockname {
+        color: #646464;
+        vertical-align: middle;
+        padding: 0.2rem;
+        font-size: 0.5rem;
+    }
+
+    .moreimg {
+        width: 1rem;
+        height: 1rem;
+        vertical-align: middle;
+    }
+
+    .moretext {
+        float: left;
+        vertical-align: middle;
+        font-size: 0.5rem;
+    }
+
+
+</style>
+
+<body>
+<div class="searchbar" style="width: 100%;">
+    <table style="width: 100%;">
+        <tr style="line-height: 1rem; width: 100%; text-align: center;">
+            <td style="display: inline-block; background-color: rgba(255, 255, 255, 0.8); width: 1.1rem; height: 1.1rem; border-radius: 1.25em;">
+            	<img class="searchbarimg" src="<%=request.getContextPath() %>/resources/customer/assets/images/search_bar/class_black.png">
+            </td>
+            <td id="search_frame">
+                <img class="searchinputimg" src="<%=request.getContextPath() %>/resources/customer/assets/images/search_bar/search_black.png">
+                <input class="searchinput0" type="text" placeholder="请输入你要查找的内容">
+                <img class="searchinputimg" src="<%=request.getContextPath() %>/resources/customer/assets/images/search_bar/clear_black.png">
+            </td>
+            <td style="display: inline-block; background-color: rgba(255, 255, 255, 0.8);width: 1.1rem; height: 1.1rem; border-radius: 1.25em;"><img class="searchbarimg" src="<%=request.getContextPath() %>/resources/customer/assets/images/search_bar/cs_black.png"></td>
+        </tr>
+    </table>
+</div>
+
+<div class="playlist">
+    <ul>
+        <c:forEach items="${carouselList }" var="carousel" varStatus="i">
+        	<li class="pl_pic" ${i.index!=0?'hidden':''}><a href="#"><img class="pl_picture" src="${carousel.carouselPic }"></a></li>
+    	</c:forEach>
+    </ul>
+</div>
+
+<div class="topline">
+    <table id="totline_table">
+        <tr>
+            <td id="topline_title_tr"><a id="topline_title" href="#">灯饰头条</a></td>
+            <td id="topline_content_tr" nowrap>
+                <div id="top_content_div">
+                    <a id="topline_content" href="#">热烈庆祝哈哈哈哈哈灯饰热烈庆祝哈哈哈哈哈灯饰热烈庆祝哈哈哈哈哈灯饰</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="lightblock">
+    <table>
+        <tr>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="<%=request.getContextPath() %>/resources/customer/assets/images/light/0-pendant.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>吊灯</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg"><img src="<%=request.getContextPath() %>/resources/customer/assets/images/light/0-ceiling.png"></div>
+                    <div class="lightblockspan"><span>吸顶灯</span></div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg"><img src="<%=request.getContextPath() %>/resources/customer/assets/images/light/0-wall.png"></div>
+                    <div class="lightblockspan"><span>壁灯</span></div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="<%=request.getContextPath() %>/resources/customer/assets/images/light/0-tablelamp.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>台灯</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="<%=request.getContextPath() %>/resources/customer/assets/images/light/0-auxiliary.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>辅灯</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="<%=request.getContextPath() %>/resources/customer/assets/images/light/1-cupric.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>铜灯</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="<%=request.getContextPath() %>/resources/customer/assets/images/light/1-ferric.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>铁艺</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="<%=request.getContextPath() %>/resources/customer/assets/images/light/1-wooden.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>木艺</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="<%=request.getContextPath() %>/resources/customer/assets/images/light/1-zincic.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>锌合金</span>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <div class="lightblockimg">
+                        <img src="<%=request.getContextPath() %>/resources/customer/assets/images/light/1-more.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>更多</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="block">
+    <table>
+        <tr style="height: 2em;">
+            <td colspan="4" style="line-height:2em;">
+                <span class="blockname">&nbsp;热卖专区</span>
+                <a class="block1link" href="#">
+                    <span class="moretext">更多&nbsp</span>
+                    <img class="moreimg" src="<%=request.getContextPath() %>/resources/customer/assets/images/hot_sale/more.png">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="block1" colspan="4">
+                <a href="#">
+                    <img class="block1img" src="<%=request.getContextPath() %>/resources/customer/assets/images/hot_sale/pendant_hot_sale.jpg">
+                    <span class="block1text">吊灯热卖专区</span>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="blockleft">
+                吸顶灯热卖
+            </td>
+            <td class="blockright">
+                <a href="#"><img class="block2" src="<%=request.getContextPath() %>/resources/customer/assets/images/hot_sale/ceiling_hot_sale.png" alt=""></a>
+            </td>
+            <td class="blockleft">
+                辅灯热卖专区
+            </td>
+            <td class="blockright">
+                <a href="#"><img class="block3" src="<%=request.getContextPath() %>/resources/customer/assets/images/hot_sale/auxiliary_hot_sale.png" alt=""></a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<div class="recommend">
+    <span class="recommend_title">———— 为你推荐 ————</span>
+
+
+    <!--推荐商品-->
+    <span class="recommend_title loadProduct">———— 我是有底线的 ————</span>
+</div>
+<input type="hidden" value="<%=request.getContextPath() %>" id="path"/>
+
+<jsp:include page="/jsp/buyer/footer.jsp"></jsp:include>
+<jsp:include page="/jsp/buyer/product/productDetail.jsp"></jsp:include>
+</body>
+
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/customer/assets/js/search_bar.js"></script>
+
+<script type="text/javascript">
+    var searchIMG0 = document.getElementsByClassName("searchbarimg")[0];
+    var searchIMG1 = document.getElementsByClassName("searchbarimg")[1];
+    var searchInputIMG0 = document.getElementsByClassName("searchinputimg")[0];
+    var searchInputIMG1 = document.getElementsByClassName("searchinputimg")[1];
+    var searchbar = document.getElementsByClassName("searchbar")[0];
+    var searchFrame = document.getElementById("search_frame");
+    var searchInput = document.getElementsByClassName("searchinput0")[0];
+
+    var flag = 0;
+    var topLocation;
+    var currentPic = 0;
+    var nextPic = 1;
+    var block1Text = document.getElementsByClassName("block1text");
+    var block1IMG = document.getElementsByClassName("block1img");
+    var playList = document.getElementsByClassName("playlist")[0];
+    var playListPictures = document.getElementsByClassName("pl_picture")
+    var playListPicturesLi = document.getElementsByClassName("pl_pic");
+    var goods = document.getElementsByClassName("recommendgoods");
+    
+    var deviceHeight = document.documentElement ? document.documentElement.clientHeight : document.body.clientHeight;
+
+    window.onload = function () {
+        /*设置高度playlist高度*/
+        for (var i = 1; i < playListPictures.length; i++) {
+            playListPictures[i].style.height = playListPictures[0].clientHeight + "px"
+        }
+        /*设置头条内容宽度*/
+        document.getElementById("top_content_div").style.width
+            = String(document.body.clientWidth - document.getElementById("topline_title_tr").clientWidth - 10)
+            + "px";
+        /*设置内容块1的高度*/
+        /*for (var i = 0; i < block1Text.length; i++) {
+            block1Text[i].style.lineHeight = block1IMG[i].clientHeight + "px";
+        }*/
+    }
+
+    function goToPic(i) {
+        playListPicturesLi[currentPic].hidden = true;
+        playListPicturesLi[i].hidden = false;
+        currentPic = i;
+    }
+    function goToNextPic() {
+        if (nextPic < playListPictures.length) {
+            goToPic(nextPic++);
+        } else {
+            nextPic = 1;
+            goToPic(0);
+        }
+    }
+    var timer1 = setInterval(goToNextPic, 3000);
+
+    function cart() {
+        alert("你点击购物车了～");
+        return false;
+    }
+    
+    $(function(){
+		loadProduct();
+        initDetailPanel();
+	});
+
+	var offset=0; 
+	var canLoad=true;
+	var noDate=false;
+	/*加载产品*/
+	function loadProduct(){
+		var url="";
+		var params;
+	
+		if(sessionStorage.getItem("pageNo")>0){
+			url=$("#path").val()+"/buyer/indexProductBatch";
+			params={offset:sessionStorage.getItem("pageNo")};
+			sessionStorage.removeItem("pageNo");
+			doAjax("GET",url,params,function(data){loadProductSuccess(data);
+					/* $('html, body').animate({
+			            scrollTop: $(".toDetailA[data-id='"+sessionStorage.getItem("productId")+"']").offset().top
+			        }, 1000); */
+				document.body.scrollTop=sessionStorage.getItem("scrollTop");
+			},fail,true,false);
+		}else{
+			url=$("#path").val()+"/buyer/indexProduct";
+			params={offset:offset};
+			doAjax("GET",url,params,loadProductSuccess,fail,true,false);
+			sessionStorage.removeItem("scrollTop");
+		}
+	}
+	
+	function loadProductBatch(pageNo){
+		var url = $("#path").val()+"/buyer/indexProductBatch";
+		var params={offset:pageNo}
+		doAjax("GET",url,params,function(data){loadProductSuccess(data);
+			},fail,true,false);
+	}
+	
+	var percent=$("#percent").val();
+	function loadProductSuccess(data){
+		var productList = data.list;
+		var html="";
+		var i;
+		for(i=0;i<productList.length;i++){
+			html+='<div class="recommendgoods">';
+			html+='<a href="javascript:showDetails('+productList[i].productId+')">';
+			html+='<img src="'+changePath(productList[i].cover1)+'" class="goods_pic">';
+			html+='<br>';
+			html+='<span class="goodstitle_span">'+productList[i].productName+'</span>';
+			html+='<div class="goodsdetail">';
+			html+='<span class="goodsmodel">型号: '+productList[i].productCode+'</span>';
+			html+='<br>';/* 
+			html+='<span class="goodsspec">规格: '+productList[i].productCode+'</span>'; */
+			html+='</div>';
+			html+='<div class="goodsprice">';
+			html+='<span>￥'+productList[i].retailPrice+'</span>';
+			html+='<img class="cartpic" src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/cart.png">';
+			html+='</div>';
+			html+='</a></div>';
+		}
+		$(html).insertBefore(".loadProduct");
+		
+		if((parseInt(offset)+10)>=data.count){
+			noDate=true;
+		}
+		if(i>9&&i>=data.count){
+			noDate=true;
+		}
+		offset=data.after;
+		canLoad=true;
+
+        /*设置物品推荐高度*/
+        for (var i = 0; i < goods.length; i++) {
+            goods[i].style.height = (goods[0].clientWidth / 3 * 5) + "px";
+        }
+	}
+	
+	function fail(data){
+		console.log(data);
+	}
+	
+	function changePath(path){
+		var i=path.lastIndexOf("/");
+		return path.substring(0,i+1)+"thumbnailImage/"+path.substring(i+1);
+	}
+	
+	 $(document).scroll(function(){
+		 if($(".loadProduct").offset().top-$(window).scrollTop()<deviceHeight){
+			if(canLoad&&!noDate){
+				canLoad=false;
+				loadProduct();
+			}
+			if(noDate){
+				load.html("<a href='"+$("#path").val()+"/product/productList'>点击查看更多产品</a>");
+				load.css("visibility","visible");
+			}
+		}
+    });
+    //结束加载中
+    $(".searchinputimg").click(function(){
+    	window.location.href="<%=request.getContextPath()%>/product/productList?keyword="+$(".searchinput0").val();
+    });
+</script>
+
+</html>
