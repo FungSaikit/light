@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="./CSS/good_list.css">
     <link rel="stylesheet" href="./CSS/hr.css">
     <link rel="stylesheet" href="./CSS/topbar.css">
+    <link rel="stylesheet" href="./CSS/swiper-3.4.2.min.css">
+    <script type="text/javascript" src="./JavaScript/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="./JavaScript/swiper-3.4.2.min.js"></script>
 
     <style type="text/css">
         * {
@@ -18,6 +21,10 @@
 
         body {
             background-color: #eeeeee;
+        }
+
+        button {
+            outline: none;
         }
 
         .placeholder {
@@ -144,22 +151,10 @@
             text-align: left;
         }
 
-        .glance_pic {
-            width: 100%;
-        }
-
         /************/
-
-        .glance_img {
-            width: 96%;
-            margin: 2%;
-            float: left;
-            position: absolute;
-        }
 
         #box1 {
             height: 100%;
-            overflow: hidden;
         }
 
         #box2 {
@@ -214,6 +209,126 @@
             text-align: center;
         }
 
+        .addtocart {
+            height: 90%;
+            width: 100%;
+            background-color: #fff;
+            position: fixed;
+            bottom: 0;
+            z-index: 10;
+            overflow: auto;
+        }
+
+        .selectionkind {
+            width: 100%;
+            border-bottom: 1px lightgray solid;
+
+        }
+
+        .selectionkind:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .selectiontitle {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        .selectionoption {
+            width: 45%;
+            height: 2rem;
+            background-color: #f3f3f3;
+            border: 1px #f3f3f3 solid;
+            border-radius: 0.2rem;
+            margin: 0.5rem 2.5% 02.5%;
+            float: left;
+        }
+
+        .optionselected {
+            background-color: #fff;
+            border-color: #f38200;
+            color: #f38200;
+        }
+
+        .addcartmenu {
+            position: fixed;
+            height: 2.8rem;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .numberselect_div {
+            width: 8rem;
+            border: 1px #f38200 solid;
+            border-radius: 1.2rem;
+            display: inline-flex;
+            margin-top: 0.1rem;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+
+        .numberselect_div button {
+            margin: 0.2rem;
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            background-color: #f38200;
+            border: 0;
+            border-radius: 1rem;
+            vertical-align: top;
+            font-size: 1rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        .numberselect_div input {
+            height: 2.4rem;
+            width: 1rem;
+            line-height: 2.4rem;
+            border: 0;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .addcartnum_button {
+            height: 2.5rem;
+            width: 4rem;
+            background-color: #f38200;
+            border-radius: 1.2rem;
+            border: 1px #f38200 solid;
+            color: #fff;
+            font-size: 1rem;
+            margin-top: 0.1rem;
+            vertical-align: top;
+        }
+
+        .swiper-slide {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            height: auto;
+            width: auto;
+            max-height: 100%;
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #f38200
+        }
+
+
     </style>
 
 </head>
@@ -221,9 +336,10 @@
 <body>
 
 <div class="topbar">
-    <a href="#"><img class="topbar_left" src="./IMG/top_bar/back.png" alt="返回"></a>
-    <span class="topbar_middle">商品列表</span>
-    <a href="#"><img class="topbar_right" src="./IMG/top_bar/cart.png" alt="购物车"></a>
+    <a href="#"><img class="topbar_left" src="./IMG/top_bar/back.png" alt="返回" style="float: left;margin-left: 0.5rem;"></a>
+    <span class="topbar_middle" style="line-height: 3rem;">商品列表</span>
+    <a href="#"><img class="topbar_right" src="./IMG/top_bar/cart.png" alt="购物车"
+                     style="float: right;margin-right: 0.5rem;"></a>
 </div>
 
 <div class="placeholder">
@@ -249,7 +365,7 @@
         </a>
         <div class="goodsprice">
             <span>￥ 150</span>
-            <img href="javascript:void(0)" onclick="cart()" class="cartpic" src="./IMG/recommend/cart.png">
+            <img href="javascript:void(0)" onclick="addToCart()" class="cartpic" src="./IMG/recommend/cart.png">
         </div>
     </div>
 
@@ -257,17 +373,26 @@
     <span class="recommend_title">———— 没有更多啦 ————</span>
 </div>
 
-<div id="detailBox" class="goods_info_div" hidden>
+<div id="detailBox" class="goods_info_div">
     <div class="blankzone"></div>
     <div class="content" id="box1">
 
         <!--/**************/-->
 
-        <div class="glance_pic">
-            <img class="glance_img" src="./IMG/light/1-ferric.png">
-            <img class="glance_img" src="./IMG/light/1-ferric.png">
-            <img class="glance_img" src="./IMG/light/1-ferric.png">
+        <div class="swiper-container" style="width: 100%; height: 25%; text-align: center; display: inline-block">
+            <!--swiper容器[可以随意更改该容器的样式-->
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./IMG/play_list/img1.jpg"></div>
+                <div class="swiper-slide"><img src="./IMG/play_list/img2.png"></div>
+                <div class="swiper-slide"><img src="./IMG/play_list/img3.png"></div>
+                <div class="swiper-slide"><img src="./IMG/play_list/img4.png"></div>
+                <div class="swiper-slide"><img src="./IMG/play_list/img5.jpg"></div>
+            </div>
+            <div class="swiper-pagination" style="width: 100%;"></div><!--分页器-->
         </div>
+
+        <!--<section class="slider-wrap" style="height:160px" id="banner"></section>-->
+
 
         <!--/**************/-->
 
@@ -354,32 +479,32 @@
                 </tr>
             </table>
         </div>
+    </div>
+    <div class="content_menu" style="background-color: #FFFFFF">
 
-        <div class="content_menu" style="background-color: #FFFFFF">
-
-            <div class="hr">
-                <div class="cell"></div>
-                <div class="hr_title">上拉查看更多详情</div>
-                <div class="cell"></div>
-            </div>
-
-            <table>
-                <tr>
-                    <td class="menu_left">
-                        <a class="content_bottom_a" href="javascript:void(0)" onclick="closeDetails()">关闭</a>
-                    </td>
-                    <td class="menu_middle">
-                        <a href="#"><img class="cart_button" src="IMG/cart/0.jpeg" alt=""></a><a href="#"><img
-                            class="cart_button" src="./IMG/cart/1.jpeg" alt=""></a><a href="#"><img class="cart_button"
-                                                                                                    src="IMG/cart/2.jpeg"
-                                                                                                    alt=""></a>
-                    </td>
-                    <td class="menu_right">
-                        <a class="content_bottom_a" href="javascript:void(0)" onclick="box3Movement()">查看详情</a>
-                    </td>
-                </tr>
-            </table>
+        <div class="hr">
+            <div class="cell"></div>
+            <div class="hr_title">上拉查看更多详情</div>
+            <div class="cell"></div>
         </div>
+
+        <table>
+            <tr>
+                <td class="menu_left">
+                    <a class="content_bottom_a" href="javascript:void(0)" onclick="closeDetails()">关闭</a>
+                </td>
+                <td class="menu_middle">
+                    <a href="#"><img class="cart_button" src="IMG/cart/0.jpeg" alt=""></a><a href="#"><img
+                        class="cart_button" src="./IMG/cart/1.jpeg" alt="" onclick="addToCart()"></a><a
+                        href="#"><img class="cart_button"
+                                      src="IMG/cart/2.jpeg"
+                                      alt=""></a>
+                </td>
+                <td class="menu_right">
+                    <a class="content_bottom_a" href="javascript:void(0)" onclick="box3Movement()">查看详情</a>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
 
@@ -428,6 +553,91 @@
 
 </div>
 
+<div class="addtocart" hidden>
+    <div class="content_title">
+        <table class="title_table">
+            <tr>
+                <td><img class="title_img" src="./IMG/light/1-ferric.png"></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td class="content_spec_title">
+                                我是不超过两行的标题我是不超过两行的标题我是不超过两行的标题我是不超过两行的标题我是不超过两行的标题我是不超过两行的标题
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <table style="width: 100%;">
+                                <tr style="width: 100%;">
+                                    <td class="content_spec_price">￥88</td>
+                                    <td class="content_spec_salenumber">销量<span>1688</span></td>
+                                </tr>
+                            </table>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+
+    <div class="selectionkind">
+        <div class="selectiontitle">
+            选项的标题1
+        </div>
+        <div class="selectionoptions">
+            <button class="selectionoption optionselected" onclick="select(this)">选择1</button>
+            <button class="selectionoption" onclick="select(this)">选择2</button>
+            <button class="selectionoption" onclick="select(this)">选择3</button>
+            <button class="selectionoption" onclick="select(this)">选择4</button>
+        </div>
+    </div>
+
+    <div class="selectionkind">
+        <div class="selectiontitle">
+            选项的标题2
+        </div>
+        <div class="selectionoptions">
+            <button class="selectionoption optionselected" onclick="select(this)">选择1</button>
+            <button class="selectionoption" onclick="select(this)">选择2</button>
+            <button class="selectionoption" onclick="select(this)">选择3</button>
+            <button class="selectionoption" onclick="select(this)">选择4</button>
+            <button class="selectionoption" onclick="select(this)">选择5</button>
+        </div>
+    </div>
+
+    <div class="selectionkind">
+        <div class="selectiontitle">
+            选项的标题3
+        </div>
+        <div class="selectionoptions">
+            <button class="selectionoption optionselected" onclick="select(this)">选择1</button>
+            <button class="selectionoption" onclick="select(this)">选择2</button>
+            <button class="selectionoption" onclick="select(this)">选择3</button>
+            <button class="selectionoption" onclick="select(this)">选择4</button>
+            <button class="selectionoption" onclick="select(this)">选择5</button>
+        </div>
+    </div>
+
+    <div class="placeholder"></div>
+
+    <div class="addcartmenu">
+        <button class="addcartnum_button" style="background-color: gray;border-color: gray" onclick="closeAddDiv()">
+            取消
+        </button>
+        <div class="numberselect_div">
+            <button style="float: left; background-color: gray;" onclick="numberMinus()">-</button>
+            <input id="buynumber" type="number" value="1" onchange="checkNumber()">
+            <button style="float: right" onclick="numberPlus()">+</button>
+        </div>
+        <button class="addcartnum_button" onclick="add()">
+            确定
+        </button>
+    </div>
+
+
+</div>
+
 <script type="text/javascript">
     var status = 0;
     /*状态：0为产品列表 1为商品页1 2为商品页2*/
@@ -449,6 +659,9 @@
     var box3 = document.getElementById("box3");
     var picTextContent = document.getElementById("pic_text_content");
     var topBar = document.getElementsByClassName("topbar1")[0];
+    var addDiv = document.getElementsByClassName("addtocart")[0];
+    var number = document.getElementById('buynumber');
+
 
     var deviceWidth = document.documentElement ? document.documentElement.clientWidth : document.body.clientWidth;
     var deviceHeight = document.documentElement ? document.documentElement.clientHeight : document.body.clientHeight;
@@ -480,10 +693,11 @@
         box3.style.top = "100%";
 
         /**/
-        picBox.style.height = deviceWidth + "px";
-        placePic();
+        //picBox.style.height = deviceWidth + "px";
+        //placePic();
         /**/
     }
+
     /**/
     function placePic() {
         for (var i = 0; i < picList.length; i++) {
@@ -529,9 +743,58 @@
 
 
     /**/
-    function cart() {
-        alert("添加购物车成功！");
+
+    function addToCart() {
+        number.value = 1;
+        addDiv.hidden = false;
     }
+
+    function closeAddDiv() {
+        addDiv.hidden = true;
+    }
+
+    function add() {
+        alert("添加成功！");
+        addDiv.hidden = true;
+    }
+
+    function numberPlus() {
+        number.value = parseInt(number.value) + 1;
+    }
+
+    function numberMinus() {
+        if (number.value > 1) {
+            number.value = parseInt(number.value) - 1;
+        } else {
+            alert("不能再小啦");
+        }
+    }
+
+    function checkNumber() {
+        if (!parseInt(number.value) > 0) {
+            alert("只能输入大于0的值");
+            number.value = 1;
+        }
+    }
+
+    function select(object) {
+        if (object.className.indexOf("optionselected") <= 0) {
+            var allBros = object.parentNode.childNodes;
+            for (var i = 0; i < allBros.length; i++) {
+                if (allBros[i].nodeType == 1) {
+                    var classNames = allBros[i].className.split(" ");
+                    allBros[i].className = "";
+                    classNames.forEach(function (t) {
+                        if (t != "optionselected" && t != "")
+                            allBros[i].className += t + " ";
+                    })
+                }
+            }
+            object.className += "optionselected";
+        }
+
+    }
+
 
     function showDetails() {
         /*禁止滑动*/
@@ -540,7 +803,7 @@
         /*显示detailBox*/
         detailBox.hidden = false;
         /*修改detailBox中的样式*/
-        bigPicture.style.height = bigPicture.clientWidth + "px";
+        //bigPicture.style.height = bigPicture.clientWidth + "px";
         line2.style.height = 0.05 * deviceHeight + "px";
         line3.style.height = 0.05 * deviceHeight + "px";
         status = 1;
@@ -587,6 +850,7 @@
         status = 0;
         box1.hidden = false;
         box2.style.top = "100%";
+        body.style.overflow = "auto";
     }
 
     function closePicTextDetails() {
@@ -611,10 +875,9 @@
     box2.addEventListener("touchend", touchbox2, false);
     box2.addEventListener("touchmove", touchbox2, false);
 
-    picBox.addEventListener("touchstart", touchPic, false);
+    /*picBox.addEventListener("touchstart", touchPic, false);
     picBox.addEventListener("touchend", touchPic, false);
-    picBox.addEventListener("touchmove", touchPic, false);
-
+    picBox.addEventListener("touchmove", touchPic, false);*/
 
 
     function touchbox1(event) {
@@ -631,7 +894,7 @@
                 xMove = Math.abs(startTouch.clientX - touch.x);
                 yMove = Math.abs(startTouch.clientY - touch.y);
                 console.log(xMove + "," + yMove);
-                if (xMove < yMove){
+                if (xMove < yMove) {
                     box1.style.bottom = touch.y - startTouch.clientY + "px";
                 }
                 break;
@@ -650,7 +913,7 @@
         }
     }
 
-    function touchPic(event) {
+    /*function touchPic(event) {
         var startTouch = event.touches[0];
         var endTouch = event.changedTouches[0];
         var xMove;
@@ -667,8 +930,8 @@
                 yMove = Math.abs(startTouch.clientY - touch.y);
                 var xOffset = startTouch.clientX - touch.x;
                 console.log(xMove + "," + yMove);
-                if (xMove > yMove){
-                    for (var i = 0; i < picList.length; i++){
+                if (xMove > yMove) {
+                    for (var i = 0; i < picList.length; i++) {
                         picList[i].style.left = i * deviceWidth + (xOffset - lastX) + "px";
                     }
                 }
@@ -680,7 +943,7 @@
             default:
                 break;
         }
-    }
+    }*/
 
     function touchbox2(event) {
         var startTouch = event.touches[0];
@@ -691,7 +954,7 @@
                 touch.y = startTouch.clientY;
                 break;
             case "touchmove":
-                //box2.style.top = -touch.y + startTouch.clientY + "px";
+                box2.style.top = -touch.y + startTouch.clientY + "px";
                 break;
             case "touchend":
                 var xMove = Math.abs(endTouch.clientX - touch.x);
@@ -710,6 +973,18 @@
         }
     }
 
+</script>
+
+<script type="text/javascript">
+    var mySwiper = new Swiper(".swiper-container", {
+        direction: "horizontal", /*横向滑动*/
+        loop: true, /*形成环路（即：可以从最后一张图跳转到第一张图*/
+        pagination: ".swiper-pagination", /*分页器*/
+        //prevButton:".swiper-button-prev",/*前进按钮*/
+        //nextButton:".swiper-button-next",/*后退按钮*/
+        autoplay: 3000/*每隔3秒自动播放*/
+    });
+    detailBox.hidden = true;
 </script>
 
 </body>

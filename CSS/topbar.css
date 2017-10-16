@@ -11,16 +11,20 @@
 .topbar_left {
     height: 60%;
     margin-top: 0.5rem;
+    float: left;
+    margin-left: 0.5rem;
 }
 
 .topbar_right {
     height: 60%;
     margin-top: 0.5rem;
+    float: right;
+    margin-right: 0.5rem;
 }
 
 .topbar_middle {
     display: inline-block;
     font-size: 1.5rem;
-    line-height: 2rem;
-    vertical-align: middle;
+    line-height: 3rem;
+
 }

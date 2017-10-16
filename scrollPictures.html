@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 1000px;
+        }
+
+        .piclist {
+            height: 15rem; /*设置整个轮播图的高度和宽度*/
+            width: 100%; /*设置整个轮播图的高度和宽度*/
+            display: inline-block;
+            list-style: none;
+            white-space: nowrap;
+            border-bottom: 1px lightgray solid;
+            overflow: hidden;
+        }
+
+        .piclist li {
+            width: 100%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .piclink {
+            width: 100%; /*设置整个轮播图的高度和宽度*/
+            height: 15rem; /*设置整个轮播图的高度和宽度*/
+            line-height: 15rem; /*设置整个轮播图的高度和宽度*/
+            display: inline-block;
+            text-align: center;
+        }
+
+        .playpic {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+
+        .picture {
+            position: absolute;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<ul class="piclist">
+    <li class="picture"><a class="piclink" href="#"><img class="playpic" src="./IMG/play_list/img3.png"></a></li>
+    <li class="picture"><a class="piclink" href="#"><img class="playpic" src="./IMG/play_list/img1.jpg"></a></li>
+    <li class="picture"><a class="piclink" href="#"><img class="playpic" src="./IMG/play_list/img2.png"></a></li>
+    <li class="picture"><a class="piclink" href="#"><img class="playpic" src="./IMG/play_list/img4.png"></a></li>
+    <li class="picture"><a class="piclink" href="#"><img class="playpic" src="./IMG/play_list/img5.jpg"></a></li>
+</ul>
+
+<button id="last_picture_button" onclick="lastPic(); this.disabled = true;">上一张</button>
+<button id="next_picture_button" onclick="nextPic(); this.disabled = true;">下一张</button>
+
+</body>
+
+<script type="text/javascript">
+
+    var pictureList = document.getElementsByClassName("picture");
+    var lastPictureButton = document.getElementById("last_picture_button");
+    var nextPictureButton = document.getElementById("next_picture_button");
+    var deviceWidth = window.innerWidth;
+    var currentPic = 0;
+
+    /*初始化图片位置*/
+    function initPicLocation() {
+        pictureList[0].style.left = "0%";
+        for (var i = 1; i < pictureList.length; i++) {
+            pictureList[i].style.left = "100%";
+        }
+    }
+
+    initPicLocation();
+
+
+    function move(eleNum, x) {
+        var ele = document.getElementsByClassName("picture")[eleNum];
+        var currentX = parseInt(ele.style.left);
+        if (currentX == x) {
+            lastPictureButton.disabled = false;
+            nextPictureButton.disabled = false;
+            return true;
+        }
+       /* ele.style.left = currentX > x ? (currentX - 1) + "px" : (currentX + 1) + "px";*/
+        ele.style.left = currentX > x ? --currentX + "%" : ++currentX+ "%"
+        var nextMovement = "move(" + eleNum + ", " + x + ")";
+        setTimeout(nextMovement, 1);
+    }
+
+    function nextPic() {
+        if (currentPic < pictureList.length - 1) {
+            move(currentPic, -100);
+            move(++currentPic, 0);
+        } else {
+            alert("已经是最后一张了");
+        }
+    }
+
+    function lastPic(eleNum) {
+        if (currentPic > 0) {
+            move(currentPic, 100);
+            move(--currentPic, 0)
+        } else {
+            alert("已经是第一张了");
+        }
+    }
+
+</script>
+
+</html>
